@@ -12,11 +12,9 @@ const HeroSection = () => {
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <div className="mb-8">
-          <img src={logo} alt="EVOA IA Logo" className="h-24 mx-auto mb-6 drop-shadow-lg" />
+          
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              EVOA IA
-            </span>
+            
           </h1>
         </div>
         
