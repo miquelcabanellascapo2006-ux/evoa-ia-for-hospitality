@@ -9,6 +9,7 @@ import {
   Shield, 
   Clock3 
 } from "lucide-react";
+import aiSolutionsImage from "@/assets/ai-solutions.jpg";
 
 const DifferentiationSection = () => {
   const handleScheduleCall = () => {
@@ -69,9 +70,51 @@ const DifferentiationSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {differentiators.map((diff, index) => (
-            <Card key={index} className="group bg-white shadow-soft hover:shadow-purple transition-all duration-300 border border-brand-purple-light/20 overflow-hidden">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div className="relative rounded-2xl overflow-hidden shadow-elegant h-80">
+            <img 
+              src={aiSolutionsImage} 
+              alt="Tecnología IA para hostelería - chatbots y sistemas automatizados"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-l from-brand-purple/30 to-transparent"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            {differentiators.slice(0, 4).map((diff, index) => (
+              <Card key={index} className="group bg-white shadow-soft hover:shadow-purple transition-all duration-300 border border-brand-purple-light/20 overflow-hidden">
+                <CardContent className="p-6 relative">
+                  <div className="absolute top-4 right-4">
+                    <Badge variant="secondary" className="bg-brand-purple-light text-brand-purple-dark font-medium text-xs">
+                      {diff.badge}
+                    </Badge>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <div className="w-10 h-10 bg-gradient-primary rounded-full flex items-center justify-center">
+                      <div className="text-white text-sm">
+                        {diff.icon}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-lg font-bold mb-3 text-foreground group-hover:text-brand-purple transition-colors duration-300">
+                    {diff.title}
+                  </h3>
+                  
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {diff.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Additional differentiators */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          {differentiators.slice(4).map((diff, index) => (
+            <Card key={index + 4} className="group bg-white shadow-soft hover:shadow-purple transition-all duration-300 border border-brand-purple-light/20 overflow-hidden">
               <CardContent className="p-8 relative">
                 <div className="absolute top-4 right-4">
                   <Badge variant="secondary" className="bg-brand-purple-light text-brand-purple-dark font-medium">

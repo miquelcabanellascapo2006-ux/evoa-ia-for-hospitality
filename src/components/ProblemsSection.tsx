@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, Clock, TrendingDown, Users, Zap } from "lucide-react";
+import restaurantImage from "@/assets/restaurant-ai.jpg";
 
 const ProblemsSection = () => {
   const handleScheduleCall = () => {
@@ -96,24 +97,40 @@ const ProblemsSection = () => {
             Transformamos cada problema en una oportunidad de crecimiento con IA especializada
           </p>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {solutions.map((solution, index) => (
-              <Card key={index} className="bg-gradient-primary text-white shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0">
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="text-white">
-                      {solution.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3">
-                    {solution.title}
-                  </h3>
-                  <p className="text-white/90 text-sm leading-relaxed">
-                    {solution.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Solutions with Image */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <div className="order-2 lg:order-1">
+              <div className="grid md:grid-cols-2 gap-6">
+                {solutions.map((solution, index) => (
+                  <Card key={index} className="bg-gradient-primary text-white shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0">
+                    <CardContent className="p-6 text-center">
+                      <div className="mb-4 flex justify-center">
+                        <div className="text-white">
+                          {solution.icon}
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-semibold mb-3">
+                        {solution.title}
+                      </h3>
+                      <p className="text-white/90 text-sm leading-relaxed">
+                        {solution.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2">
+              <div className="relative rounded-2xl overflow-hidden shadow-elegant h-80">
+                <img 
+                  src={restaurantImage} 
+                  alt="Personal de restaurante usando tecnología IA"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/30 to-transparent"></div>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">

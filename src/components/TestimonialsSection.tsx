@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
+import testimonialsBackground from "@/assets/testimonials-bg.jpg";
 
 const TestimonialsSection = () => {
   const handleScheduleCall = () => {
@@ -47,8 +48,17 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section id="testimonios" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="testimonios" className="py-20 bg-white relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-5">
+        <img 
+          src={testimonialsBackground} 
+          alt="Testimonios de éxito"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-foreground">Lo que dicen nuestros </span>

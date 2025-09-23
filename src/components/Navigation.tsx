@@ -44,6 +44,12 @@ const Navigation = () => {
             >
               Servicios
             </button>
+            <button 
+              onClick={() => scrollToSection("testimonios")}
+              className="text-foreground hover:text-brand-purple transition-colors duration-200 font-medium"
+            >
+              Testimonios
+            </button>
             <Button 
               onClick={handleScheduleCall}
               className="bg-gradient-primary hover:shadow-purple text-white font-semibold transition-all duration-300 hover:scale-105"
@@ -78,6 +84,12 @@ const Navigation = () => {
                 className="block w-full text-left px-3 py-2 text-foreground hover:text-brand-purple hover:bg-brand-purple-light/20 rounded-md transition-colors duration-200 font-medium"
               >
                 Servicios
+              </button>
+              <button 
+                onClick={() => scrollToSection("testimonios")}
+                className="block w-full text-left px-3 py-2 text-foreground hover:text-brand-purple hover:bg-brand-purple-light/20 rounded-md transition-colors duration-200 font-medium"
+              >
+                Testimonios
               </button>
               <div className="pt-2">
                 <Button 
