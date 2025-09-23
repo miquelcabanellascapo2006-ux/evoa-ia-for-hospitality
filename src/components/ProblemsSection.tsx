@@ -54,7 +54,7 @@ const ProblemsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-card">
+    <section id="servicios" className="py-20 bg-gradient-to-br from-white to-brand-purple-light/5">
       <div className="max-w-7xl mx-auto px-6">
         {/* Problems Section */}
         <div className="mb-20">
@@ -69,7 +69,7 @@ const ProblemsSection = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {problems.map((problem, index) => (
-              <Card key={index} className="bg-white/80 backdrop-blur-sm shadow-soft hover:shadow-purple transition-all duration-300 border-0">
+              <Card key={index} className="bg-white shadow-soft hover:shadow-purple transition-all duration-300 border border-brand-purple-light/20">
                 <CardContent className="p-6 text-center">
                   <div className="mb-4 flex justify-center">
                     {problem.icon}

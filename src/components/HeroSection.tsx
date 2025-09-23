@@ -7,11 +7,11 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-hero flex items-center justify-center overflow-hidden">
+    <section id="inicio" className="relative min-h-screen bg-white flex items-center justify-center overflow-hidden pt-16">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-brand-purple-light/20 to-brand-purple/30" />
-      <div className="absolute top-20 -right-20 w-96 h-96 bg-brand-purple/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-brand-purple-light/20 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-brand-purple-light/5 to-brand-purple/10" />
+      <div className="absolute top-20 -right-20 w-96 h-96 bg-brand-purple/5 rounded-full blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-brand-purple-light/10 rounded-full blur-3xl" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <div className="mb-8">

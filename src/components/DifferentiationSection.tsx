@@ -71,7 +71,7 @@ const DifferentiationSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {differentiators.map((diff, index) => (
-            <Card key={index} className="group bg-gradient-card shadow-soft hover:shadow-purple transition-all duration-300 border-0 overflow-hidden">
+            <Card key={index} className="group bg-white shadow-soft hover:shadow-purple transition-all duration-300 border border-brand-purple-light/20 overflow-hidden">
               <CardContent className="p-8 relative">
                 <div className="absolute top-4 right-4">
                   <Badge variant="secondary" className="bg-brand-purple-light text-brand-purple-dark font-medium">
