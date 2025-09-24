@@ -24,17 +24,32 @@ const ProblemsSection = () => {
     description: "Quedarse atrás frente a competidores que ya implementan tecnologías avanzadas de automatización."
   }];
   const solutions = [{
-    icon: <Zap className="h-8 w-8 text-brand-purple" />,
-    title: "Low Ticket (Entrada)",
-    description: "Chatbot básico para reservas y FAQs (WhatsApp/web), respuestas automáticas a reseñas (Google/TripAdvisor), página de reservas simple."
+    title: "Estándar",
+    subtitle: "Servicios rápidos y de implementación inmediata",
+    features: [
+      "Chatbot básico para reservas y FAQs (WhatsApp o web)",
+      "Respuestas automáticas a reseñas (Google y TripAdvisor)",
+      "Página de reservas simple (landing page) si no tienen web"
+    ]
   }, {
-    icon: <TrendingDown className="h-8 w-8 text-brand-purple rotate-180" />,
-    title: "Mid Ticket (Core/Escalable)",
-    description: "Chatbot avanzado multicanal, automatización de reservas con recordatorios, gestión de pedidos vía WhatsApp, página web completa."
+    title: "Medium",
+    subtitle: "Soluciones completas que mejoran la operativa",
+    features: [
+      "Chatbot avanzado multicanal (WhatsApp + Web + Instagram)",
+      "Automatización de reservas con confirmaciones y recordatorios",
+      "Gestión de pedidos a domicilio y takeaway vía WhatsApp",
+      "Página web completa optimizada con integración al chatbot"
+    ]
   }, {
-    icon: <Users className="h-8 w-8 text-brand-purple" />,
-    title: "High Ticket (Premium)",
-    description: "Asistente 24/7 omnicanal, automatización total del ciclo de reservas/pedidos, gestión interna automatizada, página web premium."
+    title: "Premium",
+    subtitle: "Asistente integral + automatización total",
+    features: [
+      "Chatbot 24/7 omnicanal: WhatsApp, Instagram, Facebook, Google Business, Web",
+      "Automatización de todo el ciclo de reservas/pedidos",
+      "Gestión interna automatizada (recordatorios empleados, stock bajo)",
+      "Página web premium + carta digital interactiva",
+      "Soporte y personalización a medida"
+    ]
   }];
   return <section id="servicios" className="py-20 bg-gradient-to-br from-white to-brand-purple-light/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -77,22 +92,27 @@ const ProblemsSection = () => {
           {/* Solutions with Image */}
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div className="order-2 lg:order-1">
-              <div className="grid md:grid-cols-2 gap-6">
-                {solutions.map((solution, index) => <Card key={index} className="bg-gradient-primary text-white shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0">
-                    <CardContent className="p-6 text-center">
-                      <div className="mb-4 flex justify-center">
-                        <div className="text-white">
-                          {solution.icon}
-                        </div>
-                      </div>
-                      <h3 className="text-lg font-semibold mb-3">
+              <div className="space-y-8">
+                {solutions.map((solution, index) => (
+                  <div key={index} className="bg-white border border-brand-purple-light/20 rounded-xl p-8 shadow-soft hover:shadow-purple transition-all duration-300">
+                    <div className="mb-6">
+                      <h3 className="text-2xl font-bold text-brand-purple mb-2">
                         {solution.title}
                       </h3>
-                      <p className="text-white/90 text-sm leading-relaxed">
-                        {solution.description}
+                      <p className="text-muted-foreground font-medium">
+                        {solution.subtitle}
                       </p>
-                    </CardContent>
-                  </Card>)}
+                    </div>
+                    <ul className="space-y-3">
+                      {solution.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start text-foreground">
+                          <span className="text-brand-purple mr-3 mt-1">•</span>
+                          <span className="text-sm leading-relaxed">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
             </div>
             
