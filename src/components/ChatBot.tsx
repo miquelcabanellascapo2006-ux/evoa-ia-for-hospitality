@@ -155,7 +155,7 @@ const ChatBot = () => {
       {!isOpen && <div className="fixed bottom-6 right-6 z-50">
           <Button onClick={() => setIsOpen(true)} className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 rounded-full p-4 group" size="lg">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Logo" className="w-8 h-8 rounded-full" />
+              <img src={logo} alt="Logo" className="w-8 h-8 rounded-full bg-white p-1" />
               <span className="text-sm font-medium">¿Necesitas ayuda?</span>
               <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </div>
@@ -167,7 +167,7 @@ const ChatBot = () => {
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border bg-primary text-primary-foreground rounded-t-lg">
             <div className="flex items-center gap-2">
-              <img src={logo} alt="Logo" className="w-6 h-6 rounded-full" />
+              <img src={logo} alt="Logo" className="w-6 h-6 rounded-full bg-white p-1" />
               <span className="font-semibold text-sm">EVOA</span>
             </div>
             <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="h-6 w-6 text-primary-foreground hover:bg-primary-foreground/20">
