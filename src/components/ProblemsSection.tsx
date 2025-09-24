@@ -25,20 +25,16 @@ const ProblemsSection = () => {
   }];
   const solutions = [{
     icon: <Zap className="h-8 w-8 text-brand-purple" />,
-    title: "Automatización Inteligente",
-    description: "Chatbots de IA para atención al cliente 24/7, gestión automática de reservas y optimización de inventarios."
+    title: "Low Ticket (Entrada)",
+    description: "Chatbot básico para reservas y FAQs (WhatsApp/web), respuestas automáticas a reseñas (Google/TripAdvisor), página de reservas simple."
   }, {
     icon: <TrendingDown className="h-8 w-8 text-brand-purple rotate-180" />,
-    title: "Optimización de Ingresos",
-    description: "Análisis predictivo para pricing dinámico, forecasting de demanda y estrategias de revenue management."
+    title: "Mid Ticket (Core/Escalable)",
+    description: "Chatbot avanzado multicanal, automatización de reservas con recordatorios, gestión de pedidos vía WhatsApp, página web completa."
   }, {
     icon: <Users className="h-8 w-8 text-brand-purple" />,
-    title: "Personalización Avanzada",
-    description: "Sistemas de recomendaciones personalizadas y análisis de sentimientos para mejorar la satisfacción del cliente."
-  }, {
-    icon: <AlertTriangle className="h-8 w-8 text-brand-purple" />,
-    title: "Ventaja Competitiva",
-    description: "Implementación de tecnologías de vanguardia que posicionan tu negocio como líder en innovación."
+    title: "High Ticket (Premium)",
+    description: "Asistente 24/7 omnicanal, automatización total del ciclo de reservas/pedidos, gestión interna automatizada, página web premium."
   }];
   return <section id="servicios" className="py-20 bg-gradient-to-br from-white to-brand-purple-light/5">
       <div className="max-w-7xl mx-auto px-6">
