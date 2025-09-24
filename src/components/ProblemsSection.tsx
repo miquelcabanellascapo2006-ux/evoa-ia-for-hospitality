@@ -94,23 +94,32 @@ const ProblemsSection = () => {
             <div className="order-2 lg:order-1">
               <div className="space-y-8">
                 {solutions.map((solution, index) => (
-                  <div key={index} className="bg-white border border-brand-purple-light/20 rounded-xl p-8 shadow-soft hover:shadow-purple transition-all duration-300">
+                  <div key={index} className="bg-gradient-primary text-white rounded-xl p-8 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0">
                     <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-brand-purple mb-2">
+                      <h3 className="text-2xl font-bold text-white mb-2">
                         {solution.title}
                       </h3>
-                      <p className="text-muted-foreground font-medium">
+                      <p className="text-white/90 font-medium">
                         {solution.subtitle}
                       </p>
                     </div>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 mb-6">
                       {solution.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start text-foreground">
-                          <span className="text-brand-purple mr-3 mt-1">•</span>
+                        <li key={featureIndex} className="flex items-start text-white">
+                          <span className="text-white mr-3 mt-1">•</span>
                           <span className="text-sm leading-relaxed">{feature}</span>
                         </li>
                       ))}
                     </ul>
+                    <div className="text-center">
+                      <Button 
+                        onClick={handleScheduleCall}
+                        variant="secondary"
+                        className="bg-white text-brand-purple hover:bg-white/90 font-semibold px-6 py-2"
+                      >
+                        Comenzar
+                      </Button>
+                    </div>
                   </div>
                 ))}
               </div>
