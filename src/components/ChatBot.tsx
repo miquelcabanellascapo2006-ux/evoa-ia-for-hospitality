@@ -21,7 +21,7 @@ const ChatBot = () => {
   const [inputValue, setInputValue] = useState('');
   const botResponses = {
     // Preguntas sobre la empresa
-    empresa: "EVOA es una agencia especializada en soluciones de IA para PYMEs. Llevamos años ayudando a empresas australianas a automatizar procesos y mejorar su eficiencia. Nuestro enfoque es hacer la IA accesible para pequeñas y medianas empresas.",
+    empresa: "EVOA es una agencia especializada en soluciones de IA para PYMEs. Llevamos años ayudando a empresas españolas a automatizar procesos y mejorar su eficiencia. Nuestro enfoque es hacer la IA accesible para pequeñas y medianas empresas.",
     
     // Preguntas sobre servicios
     servicios: "Ofrecemos chatbots personalizados, automatización de procesos internos, análisis de datos para PYMEs y tres niveles de servicio: Estándar, Medium y Premium. ¿Qué tipo de solución necesitas para tu negocio?",
@@ -34,15 +34,15 @@ const ChatBot = () => {
     beneficios: "Las empresas ven mejoras en eficiencia del 40-60%, reducción de costos operativos y mejor experiencia del cliente. Tenemos casos de éxito documentados donde las PYMEs recuperan su inversión en 3-6 meses.",
     
     // Seguridad y privacidad
-    seguridad: "Cumplimos con todas las regulaciones australianas de protección de datos. Implementamos medidas de seguridad avanzadas y tu información permanece completamente privada y protegida.",
+    seguridad: "Cumplimos con todas las regulaciones españolas de protección de datos (RGPD). Implementamos medidas de seguridad avanzadas y tu información permanece completamente privada y protegida.",
     
     // Preguntas generales sobre IA
-    que_es_ia: "La IA es tecnología que puede aprender y automatizar tareas. No reemplaza empleados, los potencia para que se enfoquen en tareas más estratégicas. En Australia vemos tendencias hacia automatización de atención al cliente y análisis predictivo.",
+    que_es_ia: "La IA es tecnología que puede aprender y automatizar tareas. No reemplaza empleados, los potencia para que se enfoquen en tareas más estratégicas. En España vemos tendencias hacia automatización de atención al cliente y análisis predictivo.",
     
     // Contacto y consulta
     contacto: "Puedes contactarnos para una consulta gratuita. Evaluamos tu caso específico y te proponemos la mejor solución de IA para tu PYME. ¿Te gustaría agendar una llamada?",
     
-    default: "Soy el asistente de EVOA, especialistas en IA para PYMEs australianas. Puedo ayudarte con información sobre nuestros servicios, costos, implementación, beneficios o cualquier duda sobre IA. ¿En qué puedo asistirte?"
+    default: "Soy el asistente de EVOA, especialistas en IA para PYMEs españolas. Puedo ayudarte con información sobre nuestros servicios, costos, implementación, beneficios o cualquier duda sobre IA. ¿En qué puedo asistirte?"
   };
   const handleSendMessage = () => {
     if (!inputValue.trim()) return;
