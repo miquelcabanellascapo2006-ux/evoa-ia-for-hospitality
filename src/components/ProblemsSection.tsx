@@ -80,51 +80,46 @@ const ProblemsSection = () => {
             Transformamos cada problema en una oportunidad de crecimiento con IA especializada
           </p>
           
-          {/* Solutions with Image */}
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-            <div className="order-2 lg:order-1">
-              <div className="space-y-8">
-                {solutions.map((solution, index) => <div key={index} className="bg-gradient-primary text-white rounded-xl p-8 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
-                    {index === 1 && <div className="absolute -top-3 left-6">
-                        <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
-                          Más vendido
-                        </span>
-                      </div>}
-                    
-                    {/* Service Image */}
-                    <div className="mb-6 rounded-lg overflow-hidden">
-                      <img src={solution.image} alt={`Servicio ${solution.title}`} className="w-full h-48 object-cover" />
-                    </div>
-                    
-                    <div className="mb-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">
-                        {solution.title}
-                      </h3>
-                      <p className="text-white/90 font-medium">
-                        {solution.subtitle}
-                      </p>
-                    </div>
-                    <ul className="space-y-3 mb-6">
-                      {solution.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start text-white">
-                          <span className="text-white mr-3 mt-1">•</span>
-                          <span className="text-sm leading-relaxed">{feature}</span>
-                        </li>)}
-                    </ul>
-                    <div className="text-center">
-                      <Button onClick={handleScheduleCall} variant="secondary" className="bg-white text-brand-purple hover:bg-white/90 font-semibold px-6 py-2">
-                        Comenzar
-                      </Button>
-                    </div>
-                  </div>)}
-              </div>
-            </div>
-            
-            <div className="order-1 lg:order-2">
-              <div className="relative rounded-2xl overflow-hidden shadow-elegant h-80">
+          {/* Solutions Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            {solutions.map((solution, index) => (
+              <div key={index} className="bg-gradient-primary text-white rounded-xl p-6 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
+                {index === 1 && (
+                  <div className="absolute -top-3 left-6">
+                    <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
+                      Más vendido
+                    </span>
+                  </div>
+                )}
                 
+                {/* Service Image */}
+                <div className="mb-4 rounded-lg overflow-hidden">
+                  <img src={solution.image} alt={`Servicio ${solution.title}`} className="w-full h-40 object-cover" />
+                </div>
                 
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {solution.title}
+                  </h3>
+                  <p className="text-white/90 font-medium text-sm">
+                    {solution.subtitle}
+                  </p>
+                </div>
+                <ul className="space-y-2 mb-6">
+                  {solution.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start text-white">
+                      <span className="text-white mr-2 mt-1">•</span>
+                      <span className="text-xs leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="text-center">
+                  <Button onClick={handleScheduleCall} variant="secondary" className="bg-white text-brand-purple hover:bg-white/90 font-semibold px-6 py-2 w-full">
+                    Comenzar
+                  </Button>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
           
