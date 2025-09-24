@@ -72,6 +72,11 @@ const ProblemsSection = () => {
 
         {/* Solutions Section */}
         <div>
+          <div className="flex justify-center mb-6">
+            <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
+              servicios
+            </span>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
             <span className="text-foreground">Tres caminos hacia el </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">Exito</span>
