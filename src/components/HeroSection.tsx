@@ -25,10 +25,7 @@ const HeroSection = () => {
               <span className="text-foreground"> con IA</span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-8 text-muted-foreground leading-relaxed">
-              Automatiza operaciones, aumenta ingresos y mejora la experiencia de tus huéspedes 
-              con nuestras soluciones de inteligencia artificial especializadas para PYMES hoteleras.
-            </p>
+            <p className="text-xl md:text-2xl mb-8 text-muted-foreground leading-relaxed">Automatiza operaciones, aumenta ingresos y mejora la experiencia de tus huéspedes con nuestras soluciones de inteligencia artificial especializadas para tu negocio.</p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
               <Button onClick={handleScheduleCall} size="lg" className="bg-gradient-primary hover:shadow-purple text-white font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105">
