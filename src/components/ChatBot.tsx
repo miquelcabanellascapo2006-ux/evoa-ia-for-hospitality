@@ -39,11 +39,14 @@ const ChatBot = () => {
     que_es_chatbot: "Un chatbot para nuestra empresa es una herramienta digital que permite atender automáticamente a nuestros clientes, responder sus dudas y brindar información sobre nuestros productos o servicios de manera rápida y eficiente, sin que siempre tenga que intervenir una persona.",
     
     // Implementación y costos
-    precios: "Los costos varían según la complejidad del proyecto. Un proyecto típico tarda entre 2-8 semanas. Ofrecemos soporte técnico completo post-implementación y facilitamos la integración con tus sistemas actuales.",
+    precios: "Los costos varían según la complejidad del proyecto. Nuestra implementación es rápida y eficiente, adaptándose a los tiempos de su empresa. Ofrecemos soporte técnico completo post-implementación y facilitamos la integración con tus sistemas actuales.",
     implementacion: "La implementación es sencilla y nos encargamos de la integración con tus sistemas existentes. Incluimos capacitación y soporte continuo para garantizar el éxito del proyecto.",
     
     // ROI y beneficios
     beneficios: "Las empresas ven mejoras en eficiencia del 40-60%, reducción de costos operativos y mejor experiencia del cliente. Tenemos casos de éxito documentados donde las PYMEs recuperan su inversión en 3-6 meses.",
+    
+    // Testimonios y casos de éxito
+    testimonios: "Nuestros clientes han experimentado transformaciones significativas con nuestras soluciones de IA. Contamos con casos documentados de PYMEs que han mejorado su eficiencia operativa, reducido costos y aumentado su competitividad en el mercado español.",
     
     // Seguridad y privacidad
     seguridad: "Cumplimos con todas las regulaciones españolas de protección de datos (RGPD). Implementamos medidas de seguridad avanzadas y tu información permanece completamente privada y protegida.",
@@ -132,6 +135,10 @@ const ChatBot = () => {
     // Contacto
     else if (lowerInput.includes('contacto') || lowerInput.includes('telefono') || lowerInput.includes('email') || lowerInput.includes('consulta') || lowerInput.includes('llamada')) {
       response = botResponses.contacto;
+    }
+    // Testimonios y casos de éxito
+    else if (lowerInput.includes('testimonio') || lowerInput.includes('cliente') || lowerInput.includes('caso de exito') || lowerInput.includes('casos de exito') || lowerInput.includes('opinion') || lowerInput.includes('referencia')) {
+      response = botResponses.testimonios;
     }
     setTimeout(() => {
       const botMessage: Message = {
