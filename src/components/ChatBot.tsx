@@ -20,12 +20,29 @@ const ChatBot = () => {
   }]);
   const [inputValue, setInputValue] = useState('');
   const botResponses = {
-    servicios: "Ofrecemos tres niveles de servicio: Estándar (automatización básica), Medium (integración CRM) y Premium (IA avanzada). ¿Te interesa alguno en particular?",
-    precios: "Nuestros precios varían según el nivel de servicio. El plan Estándar incluye automatización básica, el Medium incluye CRM, y el Premium tiene IA avanzada. ¿Quieres más detalles sobre algún plan?",
-    contacto: "Puedes contactarnos a través de nuestro formulario en la web o llamarnos directamente. ¿Prefieres que te contactemos nosotros?",
-    automatizacion: "Especializamos en automatización de procesos para hoteles y restaurantes, desde reservas hasta gestión de inventario. ¿Qué procesos te gustaría automatizar?",
-    ia: "Nuestra IA puede manejar consultas de clientes, optimizar precios dinámicamente y predecir demanda. ¿Te interesa alguna funcionalidad específica?",
-    default: "Entiendo que tienes preguntas sobre nuestros servicios de automatización para hoteles y restaurantes. ¿Podrías ser más específico sobre lo que necesitas?"
+    // Preguntas sobre la empresa
+    empresa: "EVOA es una agencia especializada en soluciones de IA para PYMEs. Llevamos años ayudando a empresas australianas a automatizar procesos y mejorar su eficiencia. Nuestro enfoque es hacer la IA accesible para pequeñas y medianas empresas.",
+    
+    // Preguntas sobre servicios
+    servicios: "Ofrecemos chatbots personalizados, automatización de procesos internos, análisis de datos para PYMEs y tres niveles de servicio: Estándar, Medium y Premium. ¿Qué tipo de solución necesitas para tu negocio?",
+    
+    // Implementación y costos
+    precios: "Los costos varían según la complejidad del proyecto. Un proyecto típico tarda entre 2-8 semanas. Ofrecemos soporte técnico completo post-implementación y facilitamos la integración con tus sistemas actuales.",
+    implementacion: "La implementación es sencilla y nos encargamos de la integración con tus sistemas existentes. Incluimos capacitación y soporte continuo para garantizar el éxito del proyecto.",
+    
+    // ROI y beneficios
+    beneficios: "Las empresas ven mejoras en eficiencia del 40-60%, reducción de costos operativos y mejor experiencia del cliente. Tenemos casos de éxito documentados donde las PYMEs recuperan su inversión en 3-6 meses.",
+    
+    // Seguridad y privacidad
+    seguridad: "Cumplimos con todas las regulaciones australianas de protección de datos. Implementamos medidas de seguridad avanzadas y tu información permanece completamente privada y protegida.",
+    
+    // Preguntas generales sobre IA
+    que_es_ia: "La IA es tecnología que puede aprender y automatizar tareas. No reemplaza empleados, los potencia para que se enfoquen en tareas más estratégicas. En Australia vemos tendencias hacia automatización de atención al cliente y análisis predictivo.",
+    
+    // Contacto y consulta
+    contacto: "Puedes contactarnos para una consulta gratuita. Evaluamos tu caso específico y te proponemos la mejor solución de IA para tu PYME. ¿Te gustaría agendar una llamada?",
+    
+    default: "Soy el asistente de EVOA, especialistas en IA para PYMEs australianas. Puedo ayudarte con información sobre nuestros servicios, costos, implementación, beneficios o cualquier duda sobre IA. ¿En qué puedo asistirte?"
   };
   const handleSendMessage = () => {
     if (!inputValue.trim()) return;
@@ -40,16 +57,37 @@ const ChatBot = () => {
     // Simple keyword-based response
     const lowerInput = inputValue.toLowerCase();
     let response = botResponses.default;
-    if (lowerInput.includes('servicio') || lowerInput.includes('plan')) {
+    
+    // Preguntas sobre la empresa
+    if (lowerInput.includes('evoa') || lowerInput.includes('agencia') || lowerInput.includes('empresa') || lowerInput.includes('quienes son') || lowerInput.includes('experiencia')) {
+      response = botResponses.empresa;
+    } 
+    // Preguntas sobre servicios
+    else if (lowerInput.includes('servicio') || lowerInput.includes('plan') || lowerInput.includes('chatbot') || lowerInput.includes('automatizar') || lowerInput.includes('analisis')) {
       response = botResponses.servicios;
-    } else if (lowerInput.includes('precio') || lowerInput.includes('costo') || lowerInput.includes('cuanto')) {
+    } 
+    // Preguntas sobre precios e implementación
+    else if (lowerInput.includes('precio') || lowerInput.includes('costo') || lowerInput.includes('cuanto') || lowerInput.includes('tarda') || lowerInput.includes('tiempo')) {
       response = botResponses.precios;
-    } else if (lowerInput.includes('contacto') || lowerInput.includes('telefono') || lowerInput.includes('email')) {
+    }
+    else if (lowerInput.includes('implementar') || lowerInput.includes('integrar') || lowerInput.includes('soporte') || lowerInput.includes('dificil')) {
+      response = botResponses.implementacion;
+    }
+    // Preguntas sobre beneficios y ROI
+    else if (lowerInput.includes('beneficio') || lowerInput.includes('roi') || lowerInput.includes('retorno') || lowerInput.includes('caso') || lowerInput.includes('exito') || lowerInput.includes('resultado')) {
+      response = botResponses.beneficios;
+    }
+    // Preguntas sobre seguridad
+    else if (lowerInput.includes('seguridad') || lowerInput.includes('privacidad') || lowerInput.includes('datos') || lowerInput.includes('proteccion')) {
+      response = botResponses.seguridad;
+    }
+    // Preguntas generales sobre IA
+    else if (lowerInput.includes('que es') || lowerInput.includes('ia') || lowerInput.includes('inteligencia') || lowerInput.includes('artificial') || lowerInput.includes('reemplazar') || lowerInput.includes('tendencia')) {
+      response = botResponses.que_es_ia;
+    }
+    // Contacto
+    else if (lowerInput.includes('contacto') || lowerInput.includes('telefono') || lowerInput.includes('email') || lowerInput.includes('consulta') || lowerInput.includes('llamada')) {
       response = botResponses.contacto;
-    } else if (lowerInput.includes('automatiz') || lowerInput.includes('automatiz')) {
-      response = botResponses.automatizacion;
-    } else if (lowerInput.includes('ia') || lowerInput.includes('inteligencia') || lowerInput.includes('artificial')) {
-      response = botResponses.ia;
     }
     setTimeout(() => {
       const botMessage: Message = {
