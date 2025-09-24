@@ -26,30 +26,15 @@ const ProblemsSection = () => {
   const solutions = [{
     title: "Estándar",
     subtitle: "Servicios rápidos y de implementación inmediata",
-    features: [
-      "Chatbot básico para reservas y FAQs (WhatsApp o web)",
-      "Respuestas automáticas a reseñas (Google y TripAdvisor)",
-      "Página de reservas simple (landing page) si no tienen web"
-    ]
+    features: ["Chatbot básico para reservas y FAQs (WhatsApp o web)", "Respuestas automáticas a reseñas (Google y TripAdvisor)", "Página de reservas simple (landing page) si no tienen web"]
   }, {
     title: "Medium",
     subtitle: "Soluciones completas que mejoran la operativa",
-    features: [
-      "Chatbot avanzado multicanal (WhatsApp + Web + Instagram)",
-      "Automatización de reservas con confirmaciones y recordatorios",
-      "Gestión de pedidos a domicilio y takeaway vía WhatsApp",
-      "Página web completa optimizada con integración al chatbot"
-    ]
+    features: ["Chatbot avanzado multicanal (WhatsApp + Web + Instagram)", "Automatización de reservas con confirmaciones y recordatorios", "Gestión de pedidos a domicilio y takeaway vía WhatsApp", "Página web completa optimizada con integración al chatbot"]
   }, {
     title: "Premium",
     subtitle: "Asistente integral + automatización total",
-    features: [
-      "Chatbot 24/7 omnicanal: WhatsApp, Instagram, Facebook, Google Business, Web",
-      "Automatización de todo el ciclo de reservas/pedidos",
-      "Gestión interna automatizada (recordatorios empleados, stock bajo)",
-      "Página web premium + carta digital interactiva",
-      "Soporte y personalización a medida"
-    ]
+    features: ["Chatbot 24/7 omnicanal: WhatsApp, Instagram, Facebook, Google Business, Web", "Automatización de todo el ciclo de reservas/pedidos", "Gestión interna automatizada (recordatorios empleados, stock bajo)", "Página web premium + carta digital interactiva", "Soporte y personalización a medida"]
   }];
   return <section id="servicios" className="py-20 bg-gradient-to-br from-white to-brand-purple-light/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -93,15 +78,12 @@ const ProblemsSection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <div className="order-2 lg:order-1">
               <div className="space-y-8">
-                {solutions.map((solution, index) => (
-                  <div key={index} className="bg-gradient-primary text-white rounded-xl p-8 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
-                    {index === 1 && (
-                      <div className="absolute -top-3 left-6">
+                {solutions.map((solution, index) => <div key={index} className="bg-gradient-primary text-white rounded-xl p-8 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
+                    {index === 1 && <div className="absolute -top-3 left-6">
                         <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
                           Más vendido
                         </span>
-                      </div>
-                    )}
+                      </div>}
                     <div className="mb-6">
                       <h3 className="text-2xl font-bold text-white mb-2">
                         {solution.title}
@@ -111,24 +93,17 @@ const ProblemsSection = () => {
                       </p>
                     </div>
                     <ul className="space-y-3 mb-6">
-                      {solution.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start text-white">
+                      {solution.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start text-white">
                           <span className="text-white mr-3 mt-1">•</span>
                           <span className="text-sm leading-relaxed">{feature}</span>
-                        </li>
-                      ))}
+                        </li>)}
                     </ul>
                     <div className="text-center">
-                      <Button 
-                        onClick={handleScheduleCall}
-                        variant="secondary"
-                        className="bg-white text-brand-purple hover:bg-white/90 font-semibold px-6 py-2"
-                      >
+                      <Button onClick={handleScheduleCall} variant="secondary" className="bg-white text-brand-purple hover:bg-white/90 font-semibold px-6 py-2">
                         Comenzar
                       </Button>
                     </div>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
             
@@ -140,14 +115,7 @@ const ProblemsSection = () => {
             </div>
           </div>
 
-          <div className="text-center">
-            <Button onClick={handleScheduleCall} size="lg" className="bg-gradient-primary hover:shadow-purple text-white font-semibold px-8 py-4 text-lg transition-all duration-300 hover:scale-105">
-              Agendar Llamada
-            </Button>
-            <p className="text-sm text-muted-foreground mt-4">
-              Descubre cómo podemos transformar tu negocio
-            </p>
-          </div>
+          
         </div>
       </div>
     </section>;
