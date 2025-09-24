@@ -94,7 +94,14 @@ const ProblemsSection = () => {
             <div className="order-2 lg:order-1">
               <div className="space-y-8">
                 {solutions.map((solution, index) => (
-                  <div key={index} className="bg-gradient-primary text-white rounded-xl p-8 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0">
+                  <div key={index} className="bg-gradient-primary text-white rounded-xl p-8 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
+                    {index === 1 && (
+                      <div className="absolute -top-3 left-6">
+                        <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
+                          Más vendido
+                        </span>
+                      </div>
+                    )}
                     <div className="mb-6">
                       <h3 className="text-2xl font-bold text-white mb-2">
                         {solution.title}
