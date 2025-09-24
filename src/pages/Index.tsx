@@ -4,6 +4,7 @@ import ProblemsSection from "@/components/ProblemsSection";
 import DifferentiationSection from "@/components/DifferentiationSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <DifferentiationSection />
       <TestimonialsSection />
       <Footer />
+      <ChatBot />
     </div>
   );
 };
