@@ -93,11 +93,7 @@ const ProblemsSection = () => {
                     
                     {/* Service Image */}
                     <div className="mb-6 rounded-lg overflow-hidden">
-                      <img 
-                        src={solution.image} 
-                        alt={`Servicio ${solution.title}`} 
-                        className="w-full h-48 object-cover"
-                      />
+                      <img src={solution.image} alt={`Servicio ${solution.title}`} className="w-full h-48 object-cover" />
                     </div>
                     
                     <div className="mb-6">
@@ -125,8 +121,8 @@ const ProblemsSection = () => {
             
             <div className="order-1 lg:order-2">
               <div className="relative rounded-2xl overflow-hidden shadow-elegant h-80">
-                <img src={restaurantImage} alt="Personal de restaurante usando tecnología IA" className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-purple/30 to-transparent"></div>
+                
+                
               </div>
             </div>
           </div>
