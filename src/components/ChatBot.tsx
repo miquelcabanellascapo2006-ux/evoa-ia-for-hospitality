@@ -25,7 +25,7 @@ const ChatBot = () => {
     empresa: "EVOA es una agencia especializada en soluciones de IA para PYMEs. Llevamos años ayudando a empresas españolas a automatizar procesos y mejorar su eficiencia. Nuestro enfoque es hacer la IA accesible para pequeñas y medianas empresas.",
     
     // Preguntas sobre servicios
-    servicios: "Nuestros servicios principales son:\n• Chatbots Personalizados\n• Automatización de Procesos\n• Análisis de Datos\n• Servicio Estándar\n• Servicio Medium\n• Servicio Premium\n\n¿Sobre qué servicio te gustaría saber más?",
+    servicios: "Nuestros servicios principales son:\n• Servicio Estándar\n• Servicio Medium\n• Servicio Premium\n\n¿Sobre qué servicio te gustaría saber más?",
     
     // Servicios específicos
     chatbots: "Nuestros chatbots personalizados automatizan la atención al cliente 24/7, responden preguntas frecuentes y capturan leads. Se integran con tu web y redes sociales.\n\n¿Te gustaría contratar este servicio?",
