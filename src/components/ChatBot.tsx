@@ -9,6 +9,7 @@ interface Message {
   text: string;
   isUser: boolean;
   timestamp: Date;
+  showCalendlyButton?: boolean;
 }
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,15 +28,15 @@ const ChatBot = () => {
     servicios: "Nuestros servicios principales son:\n• Chatbots Personalizados\n• Automatización de Procesos\n• Análisis de Datos\n• Servicio Estándar\n• Servicio Medium\n• Servicio Premium\n\n¿Sobre qué servicio te gustaría saber más?",
     
     // Servicios específicos
-    chatbots: "Nuestros chatbots personalizados automatizan la atención al cliente 24/7, responden preguntas frecuentes y capturan leads. Se integran con tu web y redes sociales.",
-    automatizacion: "Automatizamos procesos repetitivos como facturación, inventarios, reportes y flujos de trabajo. Esto libera tiempo para tareas más estratégicas.",
-    analisis: "Convertimos tus datos en insights valiosos. Análisis predictivo, reportes automáticos y dashboards para tomar mejores decisiones empresariales.",
-    estandar: "Servicio Estándar: Solución básica de IA perfecta para empezar. Incluye implementación básica y soporte inicial.",
-    medium: "Servicio Medium: Solución intermedia con funcionalidades avanzadas, integración con múltiples sistemas y soporte prioritario.",
-    premium: "Servicio Premium: Solución completa y personalizada. IA avanzada, integración total, soporte 24/7 y consultoría estratégica.",
+    chatbots: "Nuestros chatbots personalizados automatizan la atención al cliente 24/7, responden preguntas frecuentes y capturan leads. Se integran con tu web y redes sociales.\n\n¿Te gustaría contratar este servicio?",
+    automatizacion: "Automatizamos procesos repetitivos como facturación, inventarios, reportes y flujos de trabajo. Esto libera tiempo para tareas más estratégicas.\n\n¿Te gustaría contratar este servicio?",
+    analisis: "Convertimos tus datos en insights valiosos. Análisis predictivo, reportes automáticos y dashboards para tomar mejores decisiones empresariales.\n\n¿Te gustaría contratar este servicio?",
+    estandar: "Servicio Estándar: Solución básica de IA perfecta para empezar. Incluye implementación básica y soporte inicial.\n\n¿Te gustaría contratar este servicio?",
+    medium: "Servicio Medium: Solución intermedia con funcionalidades avanzadas, integración con múltiples sistemas y soporte prioritario.\n\n¿Te gustaría contratar este servicio?",
+    premium: "Servicio Premium: Solución completa y personalizada. IA avanzada, integración total, soporte 24/7 y consultoría estratégica.\n\n¿Te gustaría contratar este servicio?",
     
     // ¿Qué es un chatbot?
-    que_es_chatbot: "Un chatbot es un asistente virtual que puede conversar con tus clientes de forma automática. Responde preguntas, proporciona información y ayuda a los usuarios las 24 horas del día, mejorando la atención al cliente y reduciendo la carga de trabajo.",
+    que_es_chatbot: "Un chatbot para nuestra empresa es una herramienta digital que permite atender automáticamente a nuestros clientes, responder sus dudas y brindar información sobre nuestros productos o servicios de manera rápida y eficiente, sin que siempre tenga que intervenir una persona.",
     
     // Implementación y costos
     precios: "Los costos varían según la complejidad del proyecto. Un proyecto típico tarda entre 2-8 semanas. Ofrecemos soporte técnico completo post-implementación y facilitamos la integración con tus sistemas actuales.",
@@ -53,6 +54,9 @@ const ChatBot = () => {
     // Contacto y consulta
     contacto: "Puedes contactarnos para una consulta gratuita. Evaluamos tu caso específico y te proponemos la mejor solución de IA para tu PYME. ¿Te gustaría agendar una llamada?",
     
+    // Respuesta para contratar servicio
+    contratar_si: "¡Perfecto! Te ayudamos a comenzar con tu proyecto de IA. Haz clic en el botón para agendar una consulta gratuita donde evaluaremos tu caso específico.",
+    
     default: "Soy el asistente de EVOA, especialistas en IA para PYMEs españolas. Puedo ayudarte con información sobre nuestros servicios, costos, implementación, beneficios o cualquier duda sobre IA. ¿En qué puedo asistirte?"
   };
   const handleSendMessage = () => {
@@ -68,9 +72,15 @@ const ChatBot = () => {
     // Simple keyword-based response
     const lowerInput = inputValue.toLowerCase();
     let response = botResponses.default;
+    let showCalendlyButton = false;
     
+    // Detectar respuestas afirmativas para contratar servicios
+    if (lowerInput.includes('si') || lowerInput.includes('sí') || lowerInput.includes('claro') || lowerInput.includes('por supuesto') || lowerInput.includes('me interesa') || lowerInput.includes('quiero') || lowerInput.includes('acepto') || lowerInput.includes('ok') || lowerInput.includes('vale')) {
+      response = botResponses.contratar_si;
+      showCalendlyButton = true;
+    }
     // Preguntas sobre la empresa
-    if (lowerInput.includes('evoa') || lowerInput.includes('agencia') || lowerInput.includes('empresa') || lowerInput.includes('quienes son') || lowerInput.includes('experiencia')) {
+    else if (lowerInput.includes('evoa') || lowerInput.includes('agencia') || lowerInput.includes('empresa') || lowerInput.includes('quienes son') || lowerInput.includes('experiencia')) {
       response = botResponses.empresa;
     }
     // Preguntas sobre qué es un chatbot
@@ -128,7 +138,8 @@ const ChatBot = () => {
         id: messages.length + 2,
         text: response,
         isUser: false,
-        timestamp: new Date()
+        timestamp: new Date(),
+        showCalendlyButton: showCalendlyButton
       };
       setMessages(prev => [...prev, botMessage]);
     }, 1000);
@@ -168,8 +179,21 @@ const ChatBot = () => {
           <ScrollArea className="flex-1 p-4">
             <div className="space-y-3">
               {messages.map(message => <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[80%] p-3 rounded-lg text-sm ${message.isUser ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'}`}>
-                    {message.text}
+                  <div className={`max-w-[80%] ${message.isUser ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'} rounded-lg`}>
+                    <div className="p-3 text-sm">
+                      {message.text}
+                    </div>
+                    {message.showCalendlyButton && (
+                      <div className="p-3 pt-2">
+                        <Button 
+                          onClick={() => window.open('https://calendly.com/miquelcabanellascapo2006/30min', '_blank')}
+                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                          size="sm"
+                        >
+                          Comenzar
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>)}
             </div>
