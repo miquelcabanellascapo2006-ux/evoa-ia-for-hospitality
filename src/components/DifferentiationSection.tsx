@@ -46,10 +46,7 @@ const DifferentiationSection = () => {
             <span className="bg-gradient-primary bg-clip-text text-transparent">EVOA IA</span>
             <span className="text-foreground">?</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            No somos una agencia más de IA. Somos especialistas que comprenden profundamente 
-            los desafíos únicos del sector hostelero.
-          </p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">No somos una agencia más de IA. Somos especialistas que comprenden profundamente los desafíos únicos de tu negocio.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
