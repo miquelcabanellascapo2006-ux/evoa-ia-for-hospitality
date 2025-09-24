@@ -24,7 +24,18 @@ const ChatBot = () => {
     empresa: "EVOA es una agencia especializada en soluciones de IA para PYMEs. Llevamos años ayudando a empresas españolas a automatizar procesos y mejorar su eficiencia. Nuestro enfoque es hacer la IA accesible para pequeñas y medianas empresas.",
     
     // Preguntas sobre servicios
-    servicios: "Ofrecemos chatbots personalizados, automatización de procesos internos, análisis de datos para PYMEs y tres niveles de servicio: Estándar, Medium y Premium. ¿Qué tipo de solución necesitas para tu negocio?",
+    servicios: "Nuestros servicios principales son:\n• Chatbots Personalizados\n• Automatización de Procesos\n• Análisis de Datos\n• Servicio Estándar\n• Servicio Medium\n• Servicio Premium\n\n¿Sobre qué servicio te gustaría saber más?",
+    
+    // Servicios específicos
+    chatbots: "Nuestros chatbots personalizados automatizan la atención al cliente 24/7, responden preguntas frecuentes y capturan leads. Se integran con tu web y redes sociales.",
+    automatizacion: "Automatizamos procesos repetitivos como facturación, inventarios, reportes y flujos de trabajo. Esto libera tiempo para tareas más estratégicas.",
+    analisis: "Convertimos tus datos en insights valiosos. Análisis predictivo, reportes automáticos y dashboards para tomar mejores decisiones empresariales.",
+    estandar: "Servicio Estándar: Solución básica de IA perfecta para empezar. Incluye implementación básica y soporte inicial.",
+    medium: "Servicio Medium: Solución intermedia con funcionalidades avanzadas, integración con múltiples sistemas y soporte prioritario.",
+    premium: "Servicio Premium: Solución completa y personalizada. IA avanzada, integración total, soporte 24/7 y consultoría estratégica.",
+    
+    // ¿Qué es un chatbot?
+    que_es_chatbot: "Un chatbot es un asistente virtual que puede conversar con tus clientes de forma automática. Responde preguntas, proporciona información y ayuda a los usuarios las 24 horas del día, mejorando la atención al cliente y reduciendo la carga de trabajo.",
     
     // Implementación y costos
     precios: "Los costos varían según la complejidad del proyecto. Un proyecto típico tarda entre 2-8 semanas. Ofrecemos soporte técnico completo post-implementación y facilitamos la integración con tus sistemas actuales.",
@@ -61,9 +72,32 @@ const ChatBot = () => {
     // Preguntas sobre la empresa
     if (lowerInput.includes('evoa') || lowerInput.includes('agencia') || lowerInput.includes('empresa') || lowerInput.includes('quienes son') || lowerInput.includes('experiencia')) {
       response = botResponses.empresa;
-    } 
-    // Preguntas sobre servicios
-    else if (lowerInput.includes('servicio') || lowerInput.includes('plan') || lowerInput.includes('chatbot') || lowerInput.includes('automatizar') || lowerInput.includes('analisis')) {
+    }
+    // Preguntas sobre qué es un chatbot
+    else if (lowerInput.includes('que es chatbot') || lowerInput.includes('que es un chatbot') || lowerInput.includes('chatbot que es')) {
+      response = botResponses.que_es_chatbot;
+    }
+    // Servicios específicos
+    else if (lowerInput.includes('chatbot') && (lowerInput.includes('info') || lowerInput.includes('saber') || lowerInput.includes('mas'))) {
+      response = botResponses.chatbots;
+    }
+    else if (lowerInput.includes('automatiz') && (lowerInput.includes('info') || lowerInput.includes('saber') || lowerInput.includes('mas'))) {
+      response = botResponses.automatizacion;
+    }
+    else if (lowerInput.includes('analisis') && (lowerInput.includes('info') || lowerInput.includes('saber') || lowerInput.includes('mas'))) {
+      response = botResponses.analisis;
+    }
+    else if (lowerInput.includes('estandar') || lowerInput.includes('standard')) {
+      response = botResponses.estandar;
+    }
+    else if (lowerInput.includes('medium')) {
+      response = botResponses.medium;
+    }
+    else if (lowerInput.includes('premium')) {
+      response = botResponses.premium;
+    }
+    // Preguntas sobre servicios generales
+    else if (lowerInput.includes('servicio') || lowerInput.includes('plan') || lowerInput.includes('que ofrec')) {
       response = botResponses.servicios;
     } 
     // Preguntas sobre precios e implementación
