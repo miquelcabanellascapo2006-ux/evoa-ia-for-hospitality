@@ -2,6 +2,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, Clock, TrendingDown, Users, Zap } from "lucide-react";
 import restaurantImage from "@/assets/restaurant-ai.jpg";
+import serviceStandard from "@/assets/service-standard.jpg";
+import serviceMedium from "@/assets/service-medium.jpg";
+import servicePremium from "@/assets/service-premium.jpg";
 const ProblemsSection = () => {
   const handleScheduleCall = () => {
     window.open("https://calendly.com/miquelcabanellascapo2006/30min", "_blank");
@@ -26,15 +29,18 @@ const ProblemsSection = () => {
   const solutions = [{
     title: "Estándar",
     subtitle: "Servicios rápidos y de implementación inmediata",
-    features: ["Chatbot básico para reservas y FAQs (WhatsApp o web)", "Respuestas automáticas a reseñas (Google y TripAdvisor)", "Página de reservas simple (landing page) si no tienen web"]
+    features: ["Chatbot básico para reservas y FAQs (WhatsApp o web)", "Respuestas automáticas a reseñas (Google y TripAdvisor)", "Página de reservas simple (landing page) si no tienen web"],
+    image: serviceStandard
   }, {
     title: "Medium",
     subtitle: "Soluciones completas que mejoran la operativa",
-    features: ["Chatbot avanzado multicanal (WhatsApp + Web + Instagram)", "Automatización de reservas con confirmaciones y recordatorios", "Gestión de pedidos a domicilio y takeaway vía WhatsApp", "Página web completa optimizada con integración al chatbot"]
+    features: ["Chatbot avanzado multicanal (WhatsApp + Web + Instagram)", "Automatización de reservas con confirmaciones y recordatorios", "Gestión de pedidos a domicilio y takeaway vía WhatsApp", "Página web completa optimizada con integración al chatbot"],
+    image: serviceMedium
   }, {
     title: "Premium",
     subtitle: "Asistente integral + automatización total",
-    features: ["Chatbot 24/7 omnicanal: WhatsApp, Instagram, Facebook, Google Business, Web", "Automatización de todo el ciclo de reservas/pedidos", "Gestión interna automatizada (recordatorios empleados, stock bajo)", "Página web premium + carta digital interactiva", "Soporte y personalización a medida"]
+    features: ["Chatbot 24/7 omnicanal: WhatsApp, Instagram, Facebook, Google Business, Web", "Automatización de todo el ciclo de reservas/pedidos", "Gestión interna automatizada (recordatorios empleados, stock bajo)", "Página web premium + carta digital interactiva", "Soporte y personalización a medida"],
+    image: servicePremium
   }];
   return <section id="servicios" className="py-20 bg-gradient-to-br from-white to-brand-purple-light/5">
       <div className="max-w-7xl mx-auto px-6">
@@ -84,6 +90,16 @@ const ProblemsSection = () => {
                           Más vendido
                         </span>
                       </div>}
+                    
+                    {/* Service Image */}
+                    <div className="mb-6 rounded-lg overflow-hidden">
+                      <img 
+                        src={solution.image} 
+                        alt={`Servicio ${solution.title}`} 
+                        className="w-full h-48 object-cover"
+                      />
+                    </div>
+                    
                     <div className="mb-6">
                       <h3 className="text-2xl font-bold text-white mb-2">
                         {solution.title}
