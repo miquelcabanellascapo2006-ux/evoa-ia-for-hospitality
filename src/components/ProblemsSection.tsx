@@ -73,8 +73,8 @@ const ProblemsSection = () => {
         {/* Solutions Section */}
         <div>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            <span className="text-foreground">Nuestras </span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent">soluciones</span>
+            <span className="text-foreground">Tres caminos hacia el </span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Exito</span>
           </h2>
           <p className="text-xl text-muted-foreground text-center mb-12 max-w-3xl mx-auto">
             Transformamos cada problema en una oportunidad de crecimiento con IA especializada
@@ -82,15 +82,12 @@ const ProblemsSection = () => {
           
           {/* Solutions Grid */}
           <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            {solutions.map((solution, index) => (
-              <div key={index} className="bg-gradient-primary text-white rounded-xl p-6 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
-                {index === 1 && (
-                  <div className="absolute -top-3 left-6">
+            {solutions.map((solution, index) => <div key={index} className="bg-gradient-primary text-white rounded-xl p-6 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
+                {index === 1 && <div className="absolute -top-3 left-6">
                     <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
                       Más vendido
                     </span>
-                  </div>
-                )}
+                  </div>}
                 
                 {/* Service Image */}
                 <div className="mb-4 rounded-lg overflow-hidden">
@@ -106,20 +103,17 @@ const ProblemsSection = () => {
                   </p>
                 </div>
                 <ul className="space-y-2 mb-6">
-                  {solution.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start text-white">
+                  {solution.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start text-white">
                       <span className="text-white mr-2 mt-1">•</span>
                       <span className="text-xs leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
+                    </li>)}
                 </ul>
                 <div className="text-center">
                   <Button onClick={handleScheduleCall} variant="secondary" className="bg-white text-brand-purple hover:bg-white/90 font-semibold px-6 py-2 w-full">
                     Comenzar
                   </Button>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
 
           
