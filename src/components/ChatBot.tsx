@@ -193,10 +193,10 @@ const ChatBot = () => {
                     </div>
                   )}
                   
-                  <div className={`max-w-[75%] relative ${message.isUser ? 'bg-primary text-primary-foreground' : 'bg-brand-purple-light text-brand-purple-dark'} rounded-lg shadow-soft`}>
-                    {/* Viñeta rosa para mensajes del bot */}
+                  <div className={`max-w-[75%] relative ${message.isUser ? 'bg-primary text-primary-foreground' : 'bg-primary text-primary-foreground'} rounded-lg shadow-soft`}>
+                    {/* Viñeta para mensajes del bot */}
                     {!message.isUser && (
-                      <div className="absolute -left-2 top-4 w-4 h-4 bg-brand-purple-light rotate-45 shadow-soft"></div>
+                      <div className="absolute -left-2 top-4 w-4 h-4 bg-primary rotate-45 shadow-soft"></div>
                     )}
                     
                     <div className="p-3 text-sm">
