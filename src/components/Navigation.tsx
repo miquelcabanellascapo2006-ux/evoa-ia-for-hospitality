@@ -18,6 +18,14 @@ const Navigation = () => {
     setIsOpen(false);
   };
 
+  const scrollToContacts = () => {
+    const footer = document.querySelector('footer');
+    if (footer) {
+      footer.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
@@ -49,6 +57,12 @@ const Navigation = () => {
               className="text-foreground hover:text-brand-purple transition-colors duration-200 font-medium"
             >
               Testimonios
+            </button>
+            <button 
+              onClick={scrollToContacts}
+              className="text-foreground hover:text-brand-purple transition-colors duration-200 font-medium"
+            >
+              Contactos
             </button>
             <Button 
               onClick={handleScheduleCall}
@@ -90,6 +104,12 @@ const Navigation = () => {
                 className="block w-full text-left px-3 py-2 text-foreground hover:text-brand-purple hover:bg-brand-purple-light/20 rounded-md transition-colors duration-200 font-medium"
               >
                 Testimonios
+              </button>
+              <button 
+                onClick={scrollToContacts}
+                className="block w-full text-left px-3 py-2 text-foreground hover:text-brand-purple hover:bg-brand-purple-light/20 rounded-md transition-colors duration-200 font-medium"
+              >
+                Contactos
               </button>
               <div className="pt-2">
                 <Button 
