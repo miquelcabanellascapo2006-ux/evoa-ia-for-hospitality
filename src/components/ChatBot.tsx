@@ -184,9 +184,21 @@ const ChatBot = () => {
 
           {/* Messages */}
           <ScrollArea className="flex-1 p-4">
-            <div className="space-y-3">
-              {messages.map(message => <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
-                  <div className={`max-w-[80%] ${message.isUser ? 'bg-primary text-primary-foreground' : 'bg-muted text-muted-foreground'} rounded-lg`}>
+            <div className="space-y-4">
+              {messages.map(message => <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start items-start gap-2'}`}>
+                  {/* Logo del bot solo para mensajes no del usuario */}
+                  {!message.isUser && (
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white p-1 shadow-soft">
+                      <img src={logo} alt="EVOA Logo" className="w-full h-full rounded-full" />
+                    </div>
+                  )}
+                  
+                  <div className={`max-w-[75%] relative ${message.isUser ? 'bg-primary text-primary-foreground' : 'bg-brand-purple-light text-brand-purple-dark'} rounded-lg shadow-soft`}>
+                    {/* Viñeta rosa para mensajes del bot */}
+                    {!message.isUser && (
+                      <div className="absolute -left-2 top-4 w-4 h-4 bg-brand-purple-light rotate-45 shadow-soft"></div>
+                    )}
+                    
                     <div className="p-3 text-sm">
                       {message.text}
                     </div>
