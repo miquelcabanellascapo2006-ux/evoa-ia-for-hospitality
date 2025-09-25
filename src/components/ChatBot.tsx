@@ -10,6 +10,7 @@ interface Message {
   isUser: boolean;
   timestamp: Date;
   showCalendlyButton?: boolean;
+  showContactButtons?: boolean;
 }
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -76,6 +77,7 @@ const ChatBot = () => {
     const lowerInput = inputValue.toLowerCase();
     let response = botResponses.default;
     let showCalendlyButton = false;
+    let showContactButtons = false;
     
     // Detectar respuestas afirmativas para contratar servicios
     if (lowerInput.includes('si') || lowerInput.includes('sí') || lowerInput.includes('claro') || lowerInput.includes('por supuesto') || lowerInput.includes('me interesa') || lowerInput.includes('quiero') || lowerInput.includes('acepto') || lowerInput.includes('ok') || lowerInput.includes('vale')) {
@@ -135,6 +137,7 @@ const ChatBot = () => {
     // Contacto
     else if (lowerInput.includes('contacto') || lowerInput.includes('telefono') || lowerInput.includes('email') || lowerInput.includes('consulta') || lowerInput.includes('llamada')) {
       response = botResponses.contacto;
+      showContactButtons = true;
     }
     // Testimonios y casos de éxito
     else if (lowerInput.includes('testimonio') || lowerInput.includes('cliente') || lowerInput.includes('caso de exito') || lowerInput.includes('casos de exito') || lowerInput.includes('opinion') || lowerInput.includes('referencia')) {
@@ -146,7 +149,8 @@ const ChatBot = () => {
         text: response,
         isUser: false,
         timestamp: new Date(),
-        showCalendlyButton: showCalendlyButton
+        showCalendlyButton: showCalendlyButton,
+        showContactButtons: showContactButtons
       };
       setMessages(prev => [...prev, botMessage]);
     }, 1000);
@@ -210,6 +214,31 @@ const ChatBot = () => {
                           size="sm"
                         >
                           Comenzar
+                        </Button>
+                      </div>
+                    )}
+                    {message.showContactButtons && (
+                      <div className="p-3 pt-2 space-y-2">
+                        <Button 
+                          onClick={() => window.open('https://www.tiktok.com/@evoa.ia?_t=ZN-901zMMRplna&_r=1', '_blank')}
+                          className="w-full bg-background text-primary border border-primary hover:bg-primary hover:text-primary-foreground"
+                          size="sm"
+                        >
+                          TikTok
+                        </Button>
+                        <Button 
+                          onClick={() => window.open('https://www.instagram.com/evoa.ia?igsh=MXU0M2pwNngxaWEzMA%3D%3D&utm_source=qr', '_blank')}
+                          className="w-full bg-background text-primary border border-primary hover:bg-primary hover:text-primary-foreground"
+                          size="sm"
+                        >
+                          Instagram
+                        </Button>
+                        <Button 
+                          onClick={() => window.open('https://calendly.com/miquelcabanellascapo2006/30min', '_blank')}
+                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                          size="sm"
+                        >
+                          Agendar llamada
                         </Button>
                       </div>
                     )}
