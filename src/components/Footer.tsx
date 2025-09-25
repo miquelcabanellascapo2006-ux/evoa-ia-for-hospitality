@@ -1,9 +1,18 @@
 import { Button } from "@/components/ui/button";
+import { Instagram, Video } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const handleScheduleCall = () => {
     window.open("https://calendly.com/miquelcabanellascapo2006/30min", "_blank");
+  };
+
+  const handleInstagramClick = () => {
+    window.open("https://www.instagram.com/evoa.ia?igsh=MXU0M2pwNngxaWEzMA%3D%3D&utm_source=qr", "_blank");
+  };
+
+  const handleTikTokClick = () => {
+    window.open("https://www.tiktok.com/@evoa.ia?_t=ZN-901zMMRplna&_r=1", "_blank");
   };
 
   return (
@@ -60,6 +69,27 @@ const Footer = () => {
               >
                 Agendar Llamada
               </Button>
+              
+              {/* Redes Sociales */}
+              <div className="mt-4">
+                <p className="text-sm text-gray-400 mb-2">Síguenos en:</p>
+                <div className="flex space-x-4">
+                  <button
+                    onClick={handleInstagramClick}
+                    className="p-2 rounded-full bg-brand-purple/20 text-brand-purple hover:bg-brand-purple hover:text-white transition-all duration-300 hover:scale-110"
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={20} />
+                  </button>
+                  <button
+                    onClick={handleTikTokClick}
+                    className="p-2 rounded-full bg-brand-purple/20 text-brand-purple hover:bg-brand-purple hover:text-white transition-all duration-300 hover:scale-110"
+                    aria-label="TikTok"
+                  >
+                    <Video size={20} />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
