@@ -29,7 +29,7 @@ const ProblemsSection = () => {
   const solutions = [{
     title: "Estándar",
     subtitle: "Servicios rápidos y de implementación inmediata",
-    features: ["Chatbot básico para reservas y FAQs (WhatsApp o web)", "Respuestas automáticas a reseñas (Google y TripAdvisor)", "Página de reservas simple (landing page) si no tienen web"],
+    features: ["Chatbot básico para reservas y FAQs", "Respuestas automáticas a reseñas", "Página de reservas simple"],
     image: serviceStandard
   }, {
     title: "Medium",
