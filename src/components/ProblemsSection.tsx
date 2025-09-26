@@ -34,12 +34,12 @@ const ProblemsSection = () => {
   }, {
     title: "Medium",
     subtitle: "Soluciones completas que mejoran la operativa",
-    features: ["Chatbot avanzado multicanal (WhatsApp + Web + Instagram)", "Automatización de reservas con confirmaciones y recordatorios", "Gestión de pedidos a domicilio y takeaway vía WhatsApp", "Página web completa optimizada con integración al chatbot"],
+    features: ["Chatbot avanzado multicanal", "Automatización de reservas con confirmaciones y recordatorios", "Gestión de pedidos a domicilio y takeaway vía WhatsApp", "Página web completa optimizada con integración al chatbot"],
     image: serviceMedium
   }, {
     title: "Premium",
     subtitle: "Asistente integral + automatización total",
-    features: ["Chatbot 24/7 omnicanal: WhatsApp, Instagram, Facebook, Google Business, Web", "Automatización de todo el ciclo de reservas/pedidos", "Gestión interna automatizada (recordatorios empleados, stock bajo)", "Página web premium + carta digital interactiva", "Soporte y personalización a medida"],
+    features: ["Chatbot 24/7 omnicanal: WhatsApp, Instagram, Facebook, Google Business, Web", "Automatización de todo el ciclo de reservas/pedidos", "Gestión interna automatizada", "Página web premium + carta digital interactiva", "Soporte y personalización a medida"],
     image: servicePremium
   }];
   return <section id="servicios" className="py-20 bg-gradient-to-br from-white to-brand-purple-light/5">
