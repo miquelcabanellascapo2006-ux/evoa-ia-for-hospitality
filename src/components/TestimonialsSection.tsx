@@ -10,40 +10,40 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: "María González",
+      name: "Isabel Ramón",
       position: "Directora General",
-      company: "Hotel Boutique Casa Blanca",
-      location: "Madrid",
-      content: "Desde que implementamos las soluciones de EVOA IA, nuestros ingresos aumentaron un 35%. El sistema de pricing dinámico y los chatbots han revolucionado nuestra operación. El equipo de EVOA nos acompañó en cada paso del proceso.",
+      company: "Hotel Son Vida",
+      location: "Palma de Mallorca",
+      content: "Desde que implementamos EVOA IA en nuestro hotel de lujo, hemos aumentado la ocupación un 42% durante temporada media. El sistema de pricing dinámico se adapta perfectamente a la demanda turística de Mallorca y los chatbots atienden a nuestros huéspedes internacionales las 24 horas.",
       rating: 5,
-      result: "+35% ingresos"
+      result: "+42% ocupación"
     },
     {
-      name: "Carlos Mendoza",
+      name: "Tomeu Barceló",
       position: "Propietario",
-      company: "Restaurante El Jardín",
-      location: "Barcelona",
-      content: "La automatización de reservas y el análisis predictivo nos han permitido optimizar nuestro personal y reducir costos operativos en un 25%. EVOA IA realmente entiende las necesidades del sector hostelero.",
+      company: "Restaurant Ca'n Joan de S'Aigo",
+      location: "Palma de Mallorca",
+      content: "Como restaurante centenario en Palma, necesitábamos modernizarnos sin perder nuestra esencia. EVOA IA nos ayudó a automatizar reservas y gestionar las colas durante la temporada alta. Hemos reducido las esperas un 60% y aumentado la satisfacción de nuestros clientes mallorquines y turistas.",
       rating: 5,
-      result: "-25% costos"
+      result: "-60% tiempo espera"
     },
     {
-      name: "Ana Rodríguez",
-      position: "Gerente de Operaciones",
-      company: "Cadena Hotelera Costa del Sol",
-      location: "Málaga",
-      content: "El chatbot inteligente maneja el 80% de nuestras consultas automáticamente y la satisfacción del cliente ha subido notablemente. La implementación fue rápida y el soporte técnico excepcional.",
+      name: "Catalina Soler",
+      position: "Gerente",
+      company: "Hotel Rural Es Turó",
+      location: "Felanitx, Mallorca",
+      content: "En nuestro hotel rural en el interior de Mallorca, el chatbot de EVOA IA ha sido clave para informar sobre actividades locales y rutas de senderismo. El 85% de las consultas se resuelven automáticamente, permitiendo que nos centremos en ofrecer experiencias auténticas mallorquinas.",
       rating: 5,
-      result: "80% automatización"
+      result: "85% consultas automatizadas"
     },
     {
-      name: "Pedro Martín",
+      name: "Miquel Forteza",
       position: "Director Comercial",
-      company: "Resort Mediterráneo",
-      location: "Valencia",
-      content: "Las recomendaciones personalizadas han incrementado nuestras ventas adicionales en un 40%. Los huéspedes se sienten más atendidos y nosotros generamos más ingresos. Una inversión que se pagó sola en 3 meses.",
+      company: "Hotel Majestic",
+      location: "Can Pastilla, Mallorca",
+      content: "En plena Playa de Palma, competir es intenso. Las recomendaciones personalizadas de EVOA IA han incrementado nuestros servicios adicionales un 38%. Los huéspedes alemanes y británicos reciben sugerencias en su idioma sobre excursiones y restaurantes locales. ROI en solo 2 meses.",
       rating: 5,
-      result: "+40% ventas adicionales"
+      result: "+38% servicios adicionales"
     }
   ];
 
