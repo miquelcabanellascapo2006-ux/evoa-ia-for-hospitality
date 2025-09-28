@@ -25,6 +25,36 @@ const ChatBot = () => {
     // Preguntas sobre la empresa
     empresa: "EVOA es una agencia especializada en soluciones de IA para PYMEs. Llevamos años ayudando a empresas españolas a automatizar procesos y mejorar su eficiencia. Nuestro enfoque es hacer la IA accesible para pequeñas y medianas empresas.",
     
+    // 1. Sobre qué ofrecemos
+    que_ofrecemos: "Ayudamos a bares, restaurantes, cafeterías y hoteles a optimizar su gestión mediante inteligencia artificial: chatbots para reservas, análisis de ventas, predicción de demanda, automatización de tareas y mejora de la experiencia del cliente.",
+    
+    // 2. Beneficios de la IA en hostelería
+    beneficios_ia_hosteleria: "La IA te ayuda a reducir costes, evitar desperdicios, mejorar la rotación de mesas, automatizar pedidos, predecir qué platos tendrán más demanda y ofrecer promociones personalizadas a tus clientes.",
+    
+    // 3. Facilidad de uso
+    facilidad_uso: "No necesitas conocimientos técnicos. Nosotros configuramos todo y damos formación básica. Tus empleados podrán usarlo fácilmente desde el primer día.",
+    
+    // 4. Chatbots para reservas y atención
+    chatbots_reservas: "Un chatbot atiende reservas 24/7, responde preguntas frecuentes (horarios, menú, ubicación), y se integra con WhatsApp, web o redes sociales para mejorar la atención al cliente sin personal extra.",
+    
+    // 5. Integración con sistemas actuales
+    integracion_sistemas: "Sí. Conectamos nuestras soluciones de IA con tu software actual para que todo funcione de forma unificada y sin complicaciones técnicas.",
+    
+    // 6. Coste e inversión
+    coste_inversion: "Tenemos planes adaptados a pymes, con precios accesibles. Además, la IA te ayuda a ahorrar en costes de personal, stock y marketing, convirtiéndose en una inversión rentable.",
+    
+    // 7. Tiempos de implantación
+    tiempos_implantacion: "En la mayoría de los casos podemos tener un sistema funcionando en menos de 2 semanas.",
+    
+    // 8. Soporte técnico
+    soporte_tecnico: "Sí. Ofrecemos soporte técnico y actualizaciones continuas para que tu negocio siempre esté optimizado.",
+    
+    // 9. Cobertura en España
+    cobertura_espana: "Sí. Trabajamos de forma online y presencial. Podemos implementar soluciones a distancia y dar soporte en cualquier parte de España.",
+    
+    // 10. Cómo empezar
+    como_empezar: "Solo tienes que pedir una primera consulta gratuita. Analizaremos tu negocio y te recomendaremos las soluciones de IA más adecuadas según tus objetivos y presupuesto.",
+    
     // Preguntas sobre servicios
     servicios: "Nuestros servicios principales son:\n• Servicio Estándar\n• Servicio Medium\n• Servicio Premium\n\n¿Sobre qué servicio te gustaría saber más?",
     
@@ -83,6 +113,47 @@ const ChatBot = () => {
     if (lowerInput.includes('si') || lowerInput.includes('sí') || lowerInput.includes('claro') || lowerInput.includes('por supuesto') || lowerInput.includes('me interesa') || lowerInput.includes('quiero') || lowerInput.includes('acepto') || lowerInput.includes('ok') || lowerInput.includes('vale')) {
       response = botResponses.contratar_si;
       showCalendlyButton = true;
+    }
+    // 1. Sobre qué ofrecemos
+    else if (lowerInput.includes('que ofrece') || lowerInput.includes('qué ofrece') || lowerInput.includes('que haceis') || lowerInput.includes('qué hacéis') || lowerInput.includes('que hacen') || lowerInput.includes('como ayuda') || lowerInput.includes('cómo ayuda') || lowerInput.includes('hosteleria') || lowerInput.includes('hostelería')) {
+      response = botResponses.que_ofrecemos;
+    }
+    // 2. Beneficios de la IA
+    else if (lowerInput.includes('ventajas') || lowerInput.includes('ayuda la IA') || lowerInput.includes('por que usar ia') || lowerInput.includes('por qué usar ia') || lowerInput.includes('beneficios ia') || lowerInput.includes('como me ayuda') || lowerInput.includes('cómo me ayuda')) {
+      response = botResponses.beneficios_ia_hosteleria;
+    }
+    // 3. Facilidad de uso
+    else if (lowerInput.includes('dificil usar') || lowerInput.includes('difícil usar') || lowerInput.includes('conocimientos tecnicos') || lowerInput.includes('conocimientos técnicos') || lowerInput.includes('personal sabra') || lowerInput.includes('personal sabrá') || lowerInput.includes('facil usar') || lowerInput.includes('fácil usar')) {
+      response = botResponses.facilidad_uso;
+    }
+    // 4. Chatbots para reservas y atención
+    else if (lowerInput.includes('como funciona chatbot') || lowerInput.includes('cómo funciona chatbot') || lowerInput.includes('que puede hacer chatbot') || lowerInput.includes('qué puede hacer chatbot') || lowerInput.includes('chatbot puede atender') || lowerInput.includes('chatbot reservas')) {
+      response = botResponses.chatbots_reservas;
+    }
+    // 5. Integración con sistemas actuales
+    else if (lowerInput.includes('funciona con tpv') || lowerInput.includes('conectar con sistema') || lowerInput.includes('se adapta') || lowerInput.includes('integrar con') || lowerInput.includes('software actual')) {
+      response = botResponses.integracion_sistemas;
+    }
+    // 6. Coste e inversión
+    else if (lowerInput.includes('es caro') || lowerInput.includes('cuanto cuesta chatbot') || lowerInput.includes('cuánto cuesta chatbot') || lowerInput.includes('rentable') || lowerInput.includes('pequeño bar') || lowerInput.includes('cafeteria') || lowerInput.includes('cafetería') || lowerInput.includes('pyme')) {
+      response = botResponses.coste_inversion;
+    }
+    // 7. Tiempos de implantación
+    else if (lowerInput.includes('cuanto tarda') || lowerInput.includes('cuánto tarda') || lowerInput.includes('tiempo funcionar') || lowerInput.includes('implementacion rapida') || lowerInput.includes('implementación rápida') || lowerInput.includes('en cuanto tiempo')) {
+      response = botResponses.tiempos_implantacion;
+    }
+    // 8. Soporte técnico
+    else if (lowerInput.includes('soporte despues') || lowerInput.includes('soporte después') || lowerInput.includes('ayuda problemas') || lowerInput.includes('incluye mantenimiento') || lowerInput.includes('soporte tecnico') || lowerInput.includes('soporte técnico')) {
+      response = botResponses.soporte_tecnico;
+    }
+    // 9. Cobertura en España
+    else if (lowerInput.includes('toda españa') || lowerInput.includes('toda españa') || lowerInput.includes('fuera de ciudad') || lowerInput.includes('localidad') || lowerInput.includes('trabajais en') || lowerInput.includes('trabajáis en') || lowerInput.includes('online presencial')) {
+      response = botResponses.cobertura_espana;
+    }
+    // 10. Cómo empezar
+    else if (lowerInput.includes('como contrato') || lowerInput.includes('cómo contrato') || lowerInput.includes('pasos seguir') || lowerInput.includes('consulta gratuita') || lowerInput.includes('como empezar') || lowerInput.includes('cómo empezar') || lowerInput.includes('como empiezo') || lowerInput.includes('cómo empiezo')) {
+      response = botResponses.como_empezar;
+      showContactButtons = true;
     }
     // Preguntas sobre la empresa
     else if (lowerInput.includes('evoa') || lowerInput.includes('agencia') || lowerInput.includes('empresa') || lowerInput.includes('quienes son') || lowerInput.includes('experiencia')) {
