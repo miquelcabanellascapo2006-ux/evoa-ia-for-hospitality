@@ -72,11 +72,17 @@ const NewsletterSection = () => {
   };
 
   const handleDownloadGuide = () => {
-    // For demo purposes, we'll just show a toast
-    // In a real implementation, you'd provide a downloadable PDF
+    // Download the actual PDF guide
+    const link = document.createElement('a');
+    link.href = '/Guia_Ia_Hosteleria.pdf';
+    link.download = 'Guia_IA_Hosteleria.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
     toast({
       title: "Descarga iniciada",
-      description: "Tu guía de IA se descargará en breve.",
+      description: "Tu guía de IA se está descargando.",
     });
   };
 
