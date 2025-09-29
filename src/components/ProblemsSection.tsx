@@ -28,18 +28,18 @@ const ProblemsSection = () => {
   }];
   const solutions = [{
     title: "Estándar",
-    subtitle: "Servicios rápidos y de implementación inmediata",
-    features: ["Chatbot básico para reservas y FAQs", "Respuestas automáticas a reseñas", "Página de reservas simple"],
+    subtitle: "La base perfecta para empezar",
+    features: ["Página de reservas simple", "Chatbot básico en la página web para reservas y FAQs"],
     image: serviceStandard
   }, {
     title: "Medium",
-    subtitle: "Soluciones completas que mejoran la operativa",
-    features: ["Chatbot avanzado multicanal", "Automatización de reservas con confirmaciones y recordatorios", "Gestión de pedidos a domicilio y takeaway vía WhatsApp", "Página web completa optimizada con integración al chatbot"],
+    subtitle: "Automatización completa multicanal",
+    features: ["Chatbot avanzado multicanal", "Automatización de reservas y recordatorios", "Página web completa con integración del chatbot", "Respuestas automáticas a reseñas"],
     image: serviceMedium
   }, {
     title: "Premium",
-    subtitle: "Asistente integral + automatización total",
-    features: ["Chatbot 24/7 omnicanal: WhatsApp, Instagram, Facebook, Google Business, Web", "Automatización de todo el ciclo de reservas/pedidos", "Gestión interna automatizada", "Página web premium + carta digital interactiva", "Soporte y personalización a medida"],
+    subtitle: "Solución integral para tu negocio",
+    features: ["Chatbot avanzado multicanal", "Automatización de reservas y recordatorios", "Página web completa con integración del chatbot", "Respuestas automáticas a reseñas", "Gestión de pedidos a domicilio y Takeaway", "Gestión interna automatizada"],
     image: servicePremium
   }];
   return <section id="servicios" className="py-20 bg-gradient-to-br from-white to-brand-purple-light/5">
