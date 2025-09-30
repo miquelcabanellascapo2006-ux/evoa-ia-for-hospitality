@@ -27,6 +27,11 @@ const ProblemsSection = () => {
     description: "Quedarse atrás frente a competidores que ya implementan tecnologías avanzadas de automatización."
   }];
   const solutions = [{
+    title: "Starter",
+    subtitle: "Tu presencia digital básica",
+    features: ["Página web con carta digital"],
+    image: serviceStandard
+  }, {
     title: "Estándar",
     subtitle: "La base perfecta para empezar",
     features: ["Página de reservas simple", "Chatbot básico en la página web para reservas y FAQs"],
@@ -86,9 +91,9 @@ const ProblemsSection = () => {
           </p>
           
           {/* Solutions Grid */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid lg:grid-cols-4 gap-8 mb-12">
             {solutions.map((solution, index) => <div key={index} className="bg-gradient-primary text-white rounded-xl p-6 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
-                {index === 1 && <div className="absolute -top-3 left-6">
+                {index === 2 && <div className="absolute -top-3 left-6">
                     <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
                       Más vendido
                     </span>
