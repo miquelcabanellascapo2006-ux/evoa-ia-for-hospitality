@@ -97,24 +97,18 @@ const ProblemsSection = () => {
             {solutions.map((solution, index) => <div key={index} className={`group relative bg-gradient-primary text-white rounded-2xl overflow-hidden shadow-purple hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${index === 2 ? 'ring-4 ring-accent/50 scale-105' : ''}`}>
                 
                 {/* Most Popular Badge */}
-                {index === 2 && (
-                  <div className="absolute -top-3 -right-3 z-10">
+                {index === 2 && <div className="absolute -top-3 -right-3 z-10">
                     <div className="bg-accent text-accent-foreground px-6 py-3 rounded-bl-2xl rounded-tr-2xl shadow-2xl transform rotate-0">
                       <div className="flex items-center gap-2">
                         <span className="text-xs font-bold tracking-wide">MÁS VENDIDO</span>
                         <Zap className="h-4 w-4 fill-current" />
                       </div>
                     </div>
-                  </div>
-                )}
+                  </div>}
                 
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={solution.image} 
-                    alt={`Servicio ${solution.title}`} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
-                  />
+                  <img src={solution.image} alt={`Servicio ${solution.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/60 to-transparent" />
                 </div>
                 
@@ -135,22 +129,14 @@ const ProblemsSection = () => {
                       </li>)}
                   </ul>
                   
-                  <Button 
-                    onClick={handleScheduleCall} 
-                    variant="secondary" 
-                    className="bg-white text-brand-purple hover:bg-white/95 hover:scale-105 font-bold px-8 py-6 w-full rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
-                  >
+                  <Button onClick={handleScheduleCall} variant="secondary" className="bg-white text-brand-purple hover:bg-white/95 hover:scale-105 font-bold px-8 py-6 w-full rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
                     Comenzar Ahora
                   </Button>
                   
                   {/* Price Badge */}
-                  {solution.price && (
-                    <div className="mt-4 flex justify-end">
-                      <div className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full">
-                        <span className="text-white font-bold text-sm">Solo {solution.price}</span>
-                      </div>
-                    </div>
-                  )}
+                  {solution.price && <div className="mt-4 flex justify-end">
+                      
+                    </div>}
                 </div>
               </div>)}
           </div>
