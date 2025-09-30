@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, Clock, TrendingDown, Users, Zap, Check } from "lucide-react";
 import restaurantImage from "@/assets/restaurant-ai.jpg";
+import serviceStarter from "@/assets/service-starter.jpg";
 import serviceStandard from "@/assets/service-standard.jpg";
 import serviceMedium from "@/assets/service-medium.jpg";
 import servicePremium from "@/assets/service-premium.jpg";
@@ -29,8 +30,9 @@ const ProblemsSection = () => {
   const solutions = [{
     title: "Starter",
     subtitle: "Tu presencia digital básica",
+    price: "39,95€",
     features: ["Página web con carta digital"],
-    image: serviceStandard
+    image: serviceStarter
   }, {
     title: "Estándar",
     subtitle: "La base perfecta para empezar",
@@ -114,9 +116,14 @@ const ProblemsSection = () => {
                     <h3 className="text-2xl font-bold text-white mb-2">
                       {solution.title}
                     </h3>
-                    <p className="text-white/80 text-sm">
+                    <p className="text-white/80 text-sm mb-2">
                       {solution.subtitle}
                     </p>
+                    {solution.price && (
+                      <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <span className="text-white font-bold text-lg">Por solo {solution.price}</span>
+                      </div>
+                    )}
                   </div>
                   
                   <ul className="space-y-3 mb-8">
