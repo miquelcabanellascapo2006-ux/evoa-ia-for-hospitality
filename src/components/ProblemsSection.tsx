@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AlertTriangle, Clock, TrendingDown, Users, Zap } from "lucide-react";
+import { AlertTriangle, Clock, TrendingDown, Users, Zap, Check } from "lucide-react";
 import restaurantImage from "@/assets/restaurant-ai.jpg";
 import serviceStandard from "@/assets/service-standard.jpg";
 import serviceMedium from "@/assets/service-medium.jpg";
@@ -91,36 +91,47 @@ const ProblemsSection = () => {
           </p>
           
           {/* Solutions Grid */}
-          <div className="grid lg:grid-cols-4 gap-8 mb-12">
-            {solutions.map((solution, index) => <div key={index} className="bg-gradient-primary text-white rounded-xl p-6 shadow-purple hover:shadow-lg hover:scale-105 transition-all duration-300 border-0 relative">
-                {index === 2 && <div className="absolute -top-3 left-6">
-                    <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
-                      Más vendido
+          <div className="grid lg:grid-cols-4 gap-6 mb-12">
+            {solutions.map((solution, index) => <div key={index} className="group relative bg-gradient-primary text-white rounded-2xl overflow-hidden shadow-purple hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                {index === 2 && <div className="absolute -top-3 right-6 z-10">
+                    <span className="bg-accent text-accent-foreground px-4 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                      ⭐ Más vendido
                     </span>
                   </div>}
                 
                 {/* Service Image */}
-                <div className="mb-4 rounded-lg overflow-hidden">
-                  <img src={solution.image} alt={`Servicio ${solution.title}`} className="w-full h-40 object-cover" />
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={solution.image} 
+                    alt={`Servicio ${solution.title}`} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/60 to-transparent" />
                 </div>
                 
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-white mb-2">
-                    {solution.title}
-                  </h3>
-                  <p className="text-white/90 font-medium text-sm">
-                    {solution.subtitle}
-                  </p>
-                </div>
-                <ul className="space-y-2 mb-6">
-                  {solution.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start text-white">
-                      <span className="text-white mr-2 mt-1">•</span>
-                      <span className="text-xs leading-relaxed">{feature}</span>
-                    </li>)}
-                </ul>
-                <div className="text-center">
-                  <Button onClick={handleScheduleCall} variant="secondary" className="bg-white text-brand-purple hover:bg-white/90 font-semibold px-6 py-2 w-full">
-                    Comenzar
+                <div className="p-6">
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      {solution.title}
+                    </h3>
+                    <p className="text-white/80 text-sm">
+                      {solution.subtitle}
+                    </p>
+                  </div>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {solution.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start text-white group/item">
+                        <Check className="h-5 w-5 text-white mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
+                        <span className="text-sm leading-relaxed">{feature}</span>
+                      </li>)}
+                  </ul>
+                  
+                  <Button 
+                    onClick={handleScheduleCall} 
+                    variant="secondary" 
+                    className="bg-white text-brand-purple hover:bg-white/95 hover:scale-105 font-bold px-8 py-6 w-full rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                  >
+                    Comenzar Ahora
                   </Button>
                 </div>
               </div>)}
