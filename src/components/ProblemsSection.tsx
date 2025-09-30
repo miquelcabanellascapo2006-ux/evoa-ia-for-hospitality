@@ -39,7 +39,7 @@ const ProblemsSection = () => {
   }, {
     title: "Premium",
     subtitle: "Solución integral para tu negocio",
-    features: ["Chatbot avanzado multicanal", "Automatización de reservas y recordatorios", "Página web completa con integración del chatbot", "Respuestas automáticas a reseñas", "Gestión de pedidos a domicilio y Takeaway", "Gestión interna automatizada"],
+    features: ["Chatbot avanzado multicanal", "Automatización de reservas y recordatorios", "Página web completa con integración del chatbot", "Respuestas automáticas a reseñas", "Gestión de pedidos a domicilio y Takeaway", "Gestión interna automatizada", "Sistema de pago integrado"],
     image: servicePremium
   }];
   return <section id="servicios" className="py-20 bg-gradient-to-br from-white to-brand-purple-light/5">
