@@ -94,7 +94,19 @@ const ProblemsSection = () => {
           
           {/* Solutions Grid */}
           <div className="grid lg:grid-cols-4 gap-6 mb-12">
-            {solutions.map((solution, index) => <div key={index} className="group relative bg-gradient-primary text-white rounded-2xl overflow-hidden shadow-purple hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            {solutions.map((solution, index) => <div key={index} className={`group relative bg-gradient-primary text-white rounded-2xl overflow-hidden shadow-purple hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${index === 2 ? 'ring-4 ring-accent/50 scale-105' : ''}`}>
+                
+                {/* Most Popular Badge */}
+                {index === 2 && (
+                  <div className="absolute -top-3 -right-3 z-10">
+                    <div className="bg-accent text-accent-foreground px-6 py-3 rounded-bl-2xl rounded-tr-2xl shadow-2xl transform rotate-0">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold tracking-wide">MÁS VENDIDO</span>
+                        <Zap className="h-4 w-4 fill-current" />
+                      </div>
+                    </div>
+                  </div>
+                )}
                 
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -131,18 +143,14 @@ const ProblemsSection = () => {
                     Comenzar Ahora
                   </Button>
                   
-                  {/* Price or Badge */}
-                  <div className="mt-4 flex justify-end">
-                    {solution.price ? (
+                  {/* Price Badge */}
+                  {solution.price && (
+                    <div className="mt-4 flex justify-end">
                       <div className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full">
                         <span className="text-white font-bold text-sm">Solo {solution.price}</span>
                       </div>
-                    ) : index === 2 && (
-                      <div className="bg-accent text-accent-foreground px-4 py-1.5 rounded-full">
-                        <span className="text-xs font-bold">⭐ MÁS VENDIDO</span>
-                      </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </div>)}
           </div>
