@@ -95,11 +95,6 @@ const ProblemsSection = () => {
           {/* Solutions Grid */}
           <div className="grid lg:grid-cols-4 gap-6 mb-12">
             {solutions.map((solution, index) => <div key={index} className="group relative bg-gradient-primary text-white rounded-2xl overflow-hidden shadow-purple hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                {index === 2 && <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                    <span className="bg-accent text-accent-foreground px-6 py-2 rounded-full text-sm font-bold shadow-xl animate-pulse">
-                      ⭐ MÁS VENDIDO ⭐
-                    </span>
-                  </div>}
                 
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -121,20 +116,12 @@ const ProblemsSection = () => {
                     </p>
                   </div>
                   
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-3 mb-8">
                     {solution.features.map((feature, featureIndex) => <li key={featureIndex} className="flex items-start text-white group/item">
                         <Check className="h-5 w-5 text-white mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform" />
                         <span className="text-sm leading-relaxed">{feature}</span>
                       </li>)}
                   </ul>
-                  
-                  {solution.price && (
-                    <div className="text-center mb-6">
-                      <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full">
-                        <span className="text-white font-bold text-xl">Por solo {solution.price}</span>
-                      </div>
-                    </div>
-                  )}
                   
                   <Button 
                     onClick={handleScheduleCall} 
@@ -143,6 +130,19 @@ const ProblemsSection = () => {
                   >
                     Comenzar Ahora
                   </Button>
+                  
+                  {/* Price or Badge */}
+                  <div className="mt-4 flex justify-end">
+                    {solution.price ? (
+                      <div className="bg-white/20 backdrop-blur-sm px-4 py-1.5 rounded-full">
+                        <span className="text-white font-bold text-sm">Solo {solution.price}</span>
+                      </div>
+                    ) : index === 2 && (
+                      <div className="bg-accent text-accent-foreground px-4 py-1.5 rounded-full">
+                        <span className="text-xs font-bold">⭐ MÁS VENDIDO</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>)}
           </div>
