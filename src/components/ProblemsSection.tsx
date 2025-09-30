@@ -80,9 +80,10 @@ const ProblemsSection = () => {
         {/* Solutions Section */}
         <div>
           <div className="flex justify-center mb-6">
-            <span className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs font-semibold shadow-soft">
-              servicios
-            </span>
+            <div className="inline-flex items-center gap-2 bg-gradient-primary text-white px-6 py-2 rounded-full text-sm font-bold shadow-purple uppercase tracking-wider">
+              <Zap className="h-4 w-4" />
+              Nuestros Servicios
+            </div>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
             <span className="text-foreground">Tres caminos hacia el </span>
