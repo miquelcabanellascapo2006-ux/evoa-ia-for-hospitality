@@ -29,6 +29,7 @@ const ChatBot = () => {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages]);
+  
   const botResponses = {
     // Preguntas sobre la empresa
     empresa: "EVOA es una agencia especializada en soluciones de IA para PYMEs. Llevamos años ayudando a empresas españolas a automatizar procesos y mejorar su eficiencia. Nuestro enfoque es hacer la IA accesible para pequeñas y medianas empresas.",
@@ -111,67 +112,52 @@ const ChatBot = () => {
     };
     setMessages(prev => [...prev, userMessage]);
 
-    // Simple keyword-based response
     const lowerInput = inputValue.toLowerCase();
     let response = botResponses.default;
     let showCalendlyButton = false;
     let showContactButtons = false;
     
-    // Detectar respuestas afirmativas para contratar servicios
     if (lowerInput.includes('si') || lowerInput.includes('sí') || lowerInput.includes('claro') || lowerInput.includes('por supuesto') || lowerInput.includes('me interesa') || lowerInput.includes('quiero') || lowerInput.includes('acepto') || lowerInput.includes('ok') || lowerInput.includes('vale')) {
       response = botResponses.contratar_si;
       showCalendlyButton = true;
     }
-    // 1. Sobre qué ofrecemos
     else if (lowerInput.includes('que ofrece') || lowerInput.includes('qué ofrece') || lowerInput.includes('que haceis') || lowerInput.includes('qué hacéis') || lowerInput.includes('que hacen') || lowerInput.includes('como ayuda') || lowerInput.includes('cómo ayuda') || lowerInput.includes('hosteleria') || lowerInput.includes('hostelería')) {
       response = botResponses.que_ofrecemos;
     }
-    // 2. Beneficios de la IA
     else if (lowerInput.includes('ventajas') || lowerInput.includes('ayuda la IA') || lowerInput.includes('por que usar ia') || lowerInput.includes('por qué usar ia') || lowerInput.includes('beneficios ia') || lowerInput.includes('como me ayuda') || lowerInput.includes('cómo me ayuda')) {
       response = botResponses.beneficios_ia_hosteleria;
     }
-    // 3. Facilidad de uso
     else if (lowerInput.includes('dificil usar') || lowerInput.includes('difícil usar') || lowerInput.includes('conocimientos tecnicos') || lowerInput.includes('conocimientos técnicos') || lowerInput.includes('personal sabra') || lowerInput.includes('personal sabrá') || lowerInput.includes('facil usar') || lowerInput.includes('fácil usar')) {
       response = botResponses.facilidad_uso;
     }
-    // 4. Chatbots para reservas y atención
     else if (lowerInput.includes('como funciona chatbot') || lowerInput.includes('cómo funciona chatbot') || lowerInput.includes('que puede hacer chatbot') || lowerInput.includes('qué puede hacer chatbot') || lowerInput.includes('chatbot puede atender') || lowerInput.includes('chatbot reservas')) {
       response = botResponses.chatbots_reservas;
     }
-    // 5. Integración con sistemas actuales
     else if (lowerInput.includes('funciona con tpv') || lowerInput.includes('conectar con sistema') || lowerInput.includes('se adapta') || lowerInput.includes('integrar con') || lowerInput.includes('software actual')) {
       response = botResponses.integracion_sistemas;
     }
-    // 6. Coste e inversión
     else if (lowerInput.includes('es caro') || lowerInput.includes('cuanto cuesta chatbot') || lowerInput.includes('cuánto cuesta chatbot') || lowerInput.includes('rentable') || lowerInput.includes('pequeño bar') || lowerInput.includes('cafeteria') || lowerInput.includes('cafetería') || lowerInput.includes('pyme')) {
       response = botResponses.coste_inversion;
     }
-    // 7. Tiempos de implantación
     else if (lowerInput.includes('cuanto tarda') || lowerInput.includes('cuánto tarda') || lowerInput.includes('tiempo funcionar') || lowerInput.includes('implementacion rapida') || lowerInput.includes('implementación rápida') || lowerInput.includes('en cuanto tiempo')) {
       response = botResponses.tiempos_implantacion;
     }
-    // 8. Soporte técnico
     else if (lowerInput.includes('soporte despues') || lowerInput.includes('soporte después') || lowerInput.includes('ayuda problemas') || lowerInput.includes('incluye mantenimiento') || lowerInput.includes('soporte tecnico') || lowerInput.includes('soporte técnico')) {
       response = botResponses.soporte_tecnico;
     }
-    // 9. Cobertura en España
     else if (lowerInput.includes('toda españa') || lowerInput.includes('toda españa') || lowerInput.includes('fuera de ciudad') || lowerInput.includes('localidad') || lowerInput.includes('trabajais en') || lowerInput.includes('trabajáis en') || lowerInput.includes('online presencial')) {
       response = botResponses.cobertura_espana;
     }
-    // 10. Cómo empezar
     else if (lowerInput.includes('como contrato') || lowerInput.includes('cómo contrato') || lowerInput.includes('pasos seguir') || lowerInput.includes('consulta gratuita') || lowerInput.includes('como empezar') || lowerInput.includes('cómo empezar') || lowerInput.includes('como empiezo') || lowerInput.includes('cómo empiezo')) {
       response = botResponses.como_empezar;
       showContactButtons = true;
     }
-    // Preguntas sobre la empresa
     else if (lowerInput.includes('evoa') || lowerInput.includes('agencia') || lowerInput.includes('empresa') || lowerInput.includes('quienes son') || lowerInput.includes('experiencia')) {
       response = botResponses.empresa;
     }
-    // Preguntas sobre qué es un chatbot
     else if (lowerInput.includes('que es chatbot') || lowerInput.includes('que es un chatbot') || lowerInput.includes('chatbot que es')) {
       response = botResponses.que_es_chatbot;
     }
-    // Servicios específicos
     else if (lowerInput.includes('chatbot') && (lowerInput.includes('info') || lowerInput.includes('saber') || lowerInput.includes('mas'))) {
       response = botResponses.chatbots;
     }
@@ -190,38 +176,32 @@ const ChatBot = () => {
     else if (lowerInput.includes('premium')) {
       response = botResponses.premium;
     }
-    // Preguntas sobre servicios generales
     else if (lowerInput.includes('servicio') || lowerInput.includes('plan') || lowerInput.includes('que ofrec')) {
       response = botResponses.servicios;
     } 
-    // Preguntas sobre precios e implementación
     else if (lowerInput.includes('precio') || lowerInput.includes('costo') || lowerInput.includes('cuanto') || lowerInput.includes('tarda') || lowerInput.includes('tiempo')) {
       response = botResponses.precios;
     }
     else if (lowerInput.includes('implementar') || lowerInput.includes('integrar') || lowerInput.includes('soporte') || lowerInput.includes('dificil')) {
       response = botResponses.implementacion;
     }
-    // Preguntas sobre beneficios y ROI
     else if (lowerInput.includes('beneficio') || lowerInput.includes('roi') || lowerInput.includes('retorno') || lowerInput.includes('caso') || lowerInput.includes('exito') || lowerInput.includes('resultado')) {
       response = botResponses.beneficios;
     }
-    // Preguntas sobre seguridad
     else if (lowerInput.includes('seguridad') || lowerInput.includes('privacidad') || lowerInput.includes('datos') || lowerInput.includes('proteccion')) {
       response = botResponses.seguridad;
     }
-    // Preguntas generales sobre IA
     else if (lowerInput.includes('que es') || lowerInput.includes('ia') || lowerInput.includes('inteligencia') || lowerInput.includes('artificial') || lowerInput.includes('reemplazar') || lowerInput.includes('tendencia')) {
       response = botResponses.que_es_ia;
     }
-    // Contacto
     else if (lowerInput.includes('contacto') || lowerInput.includes('telefono') || lowerInput.includes('email') || lowerInput.includes('consulta') || lowerInput.includes('llamada')) {
       response = botResponses.contacto;
       showContactButtons = true;
     }
-    // Testimonios y casos de éxito
     else if (lowerInput.includes('testimonio') || lowerInput.includes('cliente') || lowerInput.includes('caso de exito') || lowerInput.includes('casos de exito') || lowerInput.includes('opinion') || lowerInput.includes('referencia')) {
       response = botResponses.testimonios;
     }
+    
     setTimeout(() => {
       const botMessage: Message = {
         id: messages.length + 2,
@@ -266,10 +246,62 @@ const ChatBot = () => {
           </div>
 
           {/* Messages */}
-          <ScrollArea className="flex-1 p-4">
+          <ScrollArea className="flex-1 p-4 bg-muted/20">
             <div className="space-y-4">
               {messages.map(message => <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start items-start gap-2'}`}>
-...
+                  {/* Logo del bot solo para mensajes no del usuario */}
+                  {!message.isUser && (
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white p-1 shadow-soft">
+                      <img src={logo} alt="EVOA Logo" className="w-full h-full rounded-full" />
+                    </div>
+                  )}
+                  
+                  <div className={`max-w-[75%] relative ${message.isUser ? 'bg-primary text-primary-foreground' : 'bg-white text-foreground border border-border'} rounded-lg shadow-soft`}>
+                    {/* Viñeta para mensajes del bot */}
+                    {!message.isUser && (
+                      <div className="absolute -left-2 top-4 w-4 h-4 bg-white border-l border-t border-border rotate-45 shadow-soft"></div>
+                    )}
+                    
+                    <div className="p-3 text-sm whitespace-pre-line">
+                      {message.text}
+                    </div>
+                    {message.showCalendlyButton && (
+                      <div className="p-3 pt-0">
+                        <Button 
+                          onClick={() => window.open('https://calendly.com/miquelcabanellascapo2006/30min', '_blank')}
+                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                          size="sm"
+                        >
+                          Comenzar
+                        </Button>
+                      </div>
+                    )}
+                    {message.showContactButtons && (
+                      <div className="p-3 pt-0 space-y-2">
+                        <Button 
+                          onClick={() => window.open('https://www.tiktok.com/@evoa.ia?_t=ZN-901zMMRplna&_r=1', '_blank')}
+                          className="w-full bg-background text-primary border border-primary hover:bg-primary hover:text-primary-foreground"
+                          size="sm"
+                        >
+                          TikTok
+                        </Button>
+                        <Button 
+                          onClick={() => window.open('https://www.instagram.com/evoa.ia?igsh=MXU0M2pwNngxaWEzMA%3D%3D&utm_source=qr', '_blank')}
+                          className="w-full bg-background text-primary border border-primary hover:bg-primary hover:text-primary-foreground"
+                          size="sm"
+                        >
+                          Instagram
+                        </Button>
+                        <Button 
+                          onClick={() => window.open('https://calendly.com/miquelcabanellascapo2006/30min', '_blank')}
+                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                          size="sm"
+                        >
+                          Agendar llamada
+                        </Button>
+                      </div>
+                    )}
+                  </div>
                 </div>)}
               {/* Elemento invisible para hacer scroll automático */}
               <div ref={messagesEndRef} />
@@ -280,7 +312,7 @@ const ChatBot = () => {
           <div className="p-4 border-t border-border">
             <div className="flex gap-2">
               <Input value={inputValue} onChange={e => setInputValue(e.target.value)} onKeyPress={handleKeyPress} placeholder="Escribe tu pregunta..." className="flex-1" />
-              <Button onClick={handleSendMessage} size="icon">
+              <Button onClick={handleSendMessage} size="icon" className="bg-primary hover:bg-primary/90">
                 <Send className="w-4 h-4" />
               </Button>
             </div>
