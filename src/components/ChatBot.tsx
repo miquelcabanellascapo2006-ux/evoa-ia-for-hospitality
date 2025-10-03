@@ -65,9 +65,10 @@ const ChatBot = () => {
     como_empezar: "Solo tienes que pedir una primera consulta gratuita. Analizaremos tu negocio y te recomendaremos las soluciones de IA más adecuadas según tus objetivos y presupuesto.",
     
     // Preguntas sobre servicios
-    servicios: "Nuestros servicios principales son:\n• Servicio Estándar\n• Servicio Medium\n• Servicio Premium\n\n¿Sobre qué servicio te gustaría saber más?",
+    servicios: "Nuestros servicios principales son:\n• Servicio Starter\n• Servicio Estándar\n• Servicio Medium\n• Servicio Premium\n\n¿Sobre qué servicio te gustaría saber más?",
     
     // Servicios específicos
+    starter: "Servicio Starter: Tu presencia digital básica con página web y carta digital. Perfecto para comenzar tu transformación digital.\n\n¿Te gustaría contratar este servicio?",
     chatbots: "Nuestros chatbots personalizados automatizan la atención al cliente 24/7, responden preguntas frecuentes y capturan leads. Se integran con tu web y redes sociales.\n\n¿Te gustaría contratar este servicio?",
     automatizacion: "Automatizamos procesos repetitivos como facturación, inventarios, reportes y flujos de trabajo. Esto libera tiempo para tareas más estratégicas.\n\n¿Te gustaría contratar este servicio?",
     analisis: "Convertimos tus datos en insights valiosos. Análisis predictivo, reportes automáticos y dashboards para tomar mejores decisiones empresariales.\n\n¿Te gustaría contratar este servicio?",
@@ -166,6 +167,9 @@ const ChatBot = () => {
     }
     else if (lowerInput.includes('analisis') && (lowerInput.includes('info') || lowerInput.includes('saber') || lowerInput.includes('mas'))) {
       response = botResponses.analisis;
+    }
+    else if (lowerInput.includes('starter')) {
+      response = botResponses.starter;
     }
     else if (lowerInput.includes('estandar') || lowerInput.includes('standard')) {
       response = botResponses.estandar;
