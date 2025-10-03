@@ -53,9 +53,9 @@ const ProblemsSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Problems Section */}
         <div className="mb-24">
-          <h2 className="text-4xl md:text-6xl font-extrabold text-center mb-6 tracking-tighter">
+          <h2 className="text-4xl md:text-6xl font-display font-extrabold text-center mb-6 tracking-tighter">
             <span className="text-foreground">¿Te suenan estos </span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent">problemas</span>
+            <span className="bg-gradient-elegant bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">problemas</span>
             <span className="text-foreground">?</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed">La mayoría de PYMES hosteleras enfrentan estos desafíos diarios que limitan su crecimiento</p>
@@ -87,9 +87,9 @@ const ProblemsSection = () => {
               Nuestros Servicios
             </div>
           </div>
-          <h2 className="text-4xl md:text-6xl font-extrabold text-center mb-6 tracking-tighter">
+          <h2 className="text-4xl md:text-6xl font-display font-extrabold text-center mb-6 tracking-tighter">
             <span className="text-foreground">Tres caminos hacia el </span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent">Éxito</span>
+            <span className="bg-gradient-elegant bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">Éxito</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground text-center mb-16 max-w-3xl mx-auto leading-relaxed">
             Transformamos cada problema en una oportunidad de crecimiento con IA especializada
@@ -97,7 +97,7 @@ const ProblemsSection = () => {
           
           {/* Solutions Grid */}
           <div className="grid lg:grid-cols-4 gap-8 mb-12">
-            {solutions.map((solution, index) => <div key={index} className={`group relative bg-gradient-primary text-white rounded-3xl overflow-hidden shadow-elegant hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 ${index === 2 ? 'ring-4 ring-brand-purple/40 scale-[1.05]' : ''}`}>
+            {solutions.map((solution, index) => <div key={index} className={`group relative bg-gradient-elegant text-white rounded-3xl overflow-hidden shadow-elegant hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 animate-gradient ${index === 2 ? 'ring-4 ring-brand-purple/40 scale-[1.05]' : ''}`}>
                 
                 {/* Most Popular Badge */}
                 {index === 2 && <div className="absolute -top-4 -right-4 z-10">
@@ -111,8 +111,11 @@ const ProblemsSection = () => {
                 
                 {/* Service Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img src={solution.image} alt={`Servicio ${solution.title}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/60 to-transparent" />
+                  <img src={solution.image} alt={`Servicio ${solution.title}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-purple/60 to-transparent group-hover:from-brand-purple/80 transition-all duration-500" />
+                  
+                  {/* Shimmer effect on hover */}
+                  <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 
                 <div className="p-8">

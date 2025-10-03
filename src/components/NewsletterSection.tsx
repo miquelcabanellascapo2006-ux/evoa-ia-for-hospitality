@@ -89,12 +89,12 @@ const NewsletterSection = () => {
   return (
     <section className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="bg-white rounded-2xl shadow-soft p-8 md:p-12 border border-border/50">
+        <div className="glass rounded-3xl shadow-elegant p-8 md:p-12 border border-white/50 backdrop-blur-xl">
           <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-full mb-6">
-              <Mail className="w-8 h-8 text-white" />
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-elegant rounded-full mb-6 animate-float shadow-elegant">
+              <Mail className="w-10 h-10 text-white" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-5xl font-display font-extrabold text-foreground mb-4 tracking-tight">
               Recibe tu Guía Gratuita de IA
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

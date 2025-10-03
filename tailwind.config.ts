@@ -61,10 +61,15 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        'display': ['Sora', 'Inter', 'sans-serif'],
+      },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
         "gradient-hero": "var(--gradient-hero)",
         "gradient-card": "var(--gradient-card)",
+        "gradient-elegant": "var(--gradient-elegant)",
       },
       boxShadow: {
         "purple": "var(--shadow-purple)",

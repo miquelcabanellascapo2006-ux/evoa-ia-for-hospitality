@@ -41,12 +41,12 @@ const DifferentiationSection = () => {
   return <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-display font-extrabold mb-6 tracking-tighter">
             <span className="text-foreground">¿Por qué elegir </span>
-            <span className="bg-gradient-primary bg-clip-text text-transparent">EVOA IA</span>
+            <span className="bg-gradient-elegant bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">EVOA IA</span>
             <span className="text-foreground">?</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">No somos una agencia más de IA. Somos especialistas que comprenden profundamente los desafíos únicos del sector hostelero.</p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">No somos una agencia más de IA. Somos especialistas que comprenden profundamente los desafíos únicos del sector hostelero.</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
