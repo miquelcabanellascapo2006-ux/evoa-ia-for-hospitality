@@ -69,6 +69,11 @@ export default {
       boxShadow: {
         "purple": "var(--shadow-purple)",
         "soft": "var(--shadow-soft)",
+        "elegant": "var(--shadow-elegant)",
+      },
+      letterSpacing: {
+        tighter: '-0.02em',
+        tight: '-0.01em',
       },
       borderRadius: {
         lg: "var(--radius)",

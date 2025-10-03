@@ -9,39 +9,41 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 225 15% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 225 15% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 225 15% 15%;
 
-    --primary: 280 100% 70%;
+    --primary: 280 85% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 280 100% 95%;
-    --secondary-foreground: 280 100% 20%;
+    --secondary: 280 20% 97%;
+    --secondary-foreground: 280 90% 25%;
 
-    --muted: 280 20% 96%;
-    --muted-foreground: 280 10% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 280 100% 85%;
-    --accent-foreground: 280 100% 20%;
+    --accent: 280 90% 88%;
+    --accent-foreground: 280 90% 25%;
 
     /* Custom brand colors */
-    --brand-purple: 280 100% 70%;
-    --brand-purple-light: 280 100% 85%;
-    --brand-purple-dark: 280 100% 55%;
+    --brand-purple: 280 85% 65%;
+    --brand-purple-light: 280 80% 88%;
+    --brand-purple-dark: 280 90% 50%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(280 100% 70%), hsl(260 100% 75%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(280 20% 97%), hsl(280 30% 95%));
+    --gradient-primary: linear-gradient(135deg, hsl(280 85% 65%), hsl(265 90% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(280 15% 98%), hsl(280 20% 96%));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(280 10% 99%));
+    --gradient-elegant: linear-gradient(135deg, hsl(280 90% 66%), hsl(265 95% 68%), hsl(250 90% 70%));
     
     /* Shadows */
-    --shadow-purple: 0 10px 40px -10px hsl(280 100% 70% / 0.3);
-    --shadow-soft: 0 4px 20px -2px hsl(280 20% 50% / 0.1);
+    --shadow-purple: 0 10px 40px -10px hsl(280 85% 65% / 0.25);
+    --shadow-soft: 0 2px 20px -2px hsl(220 20% 40% / 0.08);
+    --shadow-elegant: 0 20px 60px -15px hsl(280 85% 65% / 0.3);
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -114,6 +116,17 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+  
+  p {
+    @apply leading-relaxed;
   }
 }

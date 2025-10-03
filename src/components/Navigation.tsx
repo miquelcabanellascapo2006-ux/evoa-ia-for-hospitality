@@ -25,30 +25,36 @@ const Navigation = () => {
     }
     setIsOpen(false);
   };
-  return <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
+  return <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-border/40 shadow-soft">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center cursor-pointer" onClick={() => scrollToSection("inicio")}>
-            <img src={logo} alt="EVOA IA Logo" className="h-8 mr-3" />
-            <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+          <div className="flex items-center cursor-pointer group" onClick={() => scrollToSection("inicio")}>
+            <img src={logo} alt="EVOA IA Logo" className="h-10 mr-3 transition-transform duration-300 group-hover:scale-105" />
+            <span className="text-2xl font-extrabold tracking-tight bg-gradient-primary bg-clip-text text-transparent">
               EVOA IA
             </span>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button onClick={() => scrollToSection("inicio")} className="text-foreground hover:text-brand-purple transition-colors duration-200 font-medium">
+          <div className="hidden md:flex items-center space-x-10">
+            <button onClick={() => scrollToSection("inicio")} className="text-foreground hover:text-brand-purple transition-colors duration-200 font-semibold text-sm relative group">
               Inicio
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-purple transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button onClick={() => scrollToSection("servicios")} className="text-foreground hover:text-brand-purple transition-colors duration-200 font-medium">
+            <button onClick={() => scrollToSection("servicios")} className="text-foreground hover:text-brand-purple transition-colors duration-200 font-semibold text-sm relative group">
               Servicios
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-purple transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button onClick={() => scrollToSection("testimonios")} className="text-foreground hover:text-brand-purple transition-colors duration-200 font-medium">
+            <button onClick={() => scrollToSection("testimonios")} className="text-foreground hover:text-brand-purple transition-colors duration-200 font-semibold text-sm relative group">
               Testimonios
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-purple transition-all duration-300 group-hover:w-full"></span>
             </button>
-            <button onClick={scrollToContacts} className="text-foreground hover:text-brand-purple transition-colors duration-200 font-medium">Contacto</button>
-            <Button onClick={handleScheduleCall} className="bg-gradient-primary hover:shadow-purple text-white font-semibold transition-all duration-300 hover:scale-105">
+            <button onClick={scrollToContacts} className="text-foreground hover:text-brand-purple transition-colors duration-200 font-semibold text-sm relative group">
+              Contacto
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-purple transition-all duration-300 group-hover:w-full"></span>
+            </button>
+            <Button onClick={handleScheduleCall} className="bg-gradient-primary hover:shadow-elegant text-white font-bold text-sm px-6 py-5 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-0.5">
               Agendar Llamada
             </Button>
           </div>
