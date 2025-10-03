@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { X, MessageCircle, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -21,6 +21,14 @@ const ChatBot = () => {
     timestamp: new Date()
   }]);
   const [inputValue, setInputValue] = useState('');
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Scroll automático cuando cambian los mensajes
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
   const botResponses = {
     // Preguntas sobre la empresa
     empresa: "EVOA es una agencia especializada en soluciones de IA para PYMEs. Llevamos años ayudando a empresas españolas a automatizar procesos y mejorar su eficiencia. Nuestro enfoque es hacer la IA accesible para pequeñas y medianas empresas.",
@@ -261,60 +269,10 @@ const ChatBot = () => {
           <ScrollArea className="flex-1 p-4">
             <div className="space-y-4">
               {messages.map(message => <div key={message.id} className={`flex ${message.isUser ? 'justify-end' : 'justify-start items-start gap-2'}`}>
-                  {/* Logo del bot solo para mensajes no del usuario */}
-                  {!message.isUser && (
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white p-1 shadow-soft">
-                      <img src={logo} alt="EVOA Logo" className="w-full h-full rounded-full" />
-                    </div>
-                  )}
-                  
-                  <div className={`max-w-[75%] relative ${message.isUser ? 'bg-primary text-primary-foreground' : 'bg-primary text-primary-foreground'} rounded-lg shadow-soft`}>
-                    {/* Viñeta para mensajes del bot */}
-                    {!message.isUser && (
-                      <div className="absolute -left-2 top-4 w-4 h-4 bg-primary rotate-45 shadow-soft"></div>
-                    )}
-                    
-                    <div className="p-3 text-sm">
-                      {message.text}
-                    </div>
-                    {message.showCalendlyButton && (
-                      <div className="p-3 pt-2">
-                        <Button 
-                          onClick={() => window.open('https://calendly.com/miquelcabanellascapo2006/30min', '_blank')}
-                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                          size="sm"
-                        >
-                          Comenzar
-                        </Button>
-                      </div>
-                    )}
-                    {message.showContactButtons && (
-                      <div className="p-3 pt-2 space-y-2">
-                        <Button 
-                          onClick={() => window.open('https://www.tiktok.com/@evoa.ia?_t=ZN-901zMMRplna&_r=1', '_blank')}
-                          className="w-full bg-background text-primary border border-primary hover:bg-primary hover:text-primary-foreground"
-                          size="sm"
-                        >
-                          TikTok
-                        </Button>
-                        <Button 
-                          onClick={() => window.open('https://www.instagram.com/evoa.ia?igsh=MXU0M2pwNngxaWEzMA%3D%3D&utm_source=qr', '_blank')}
-                          className="w-full bg-background text-primary border border-primary hover:bg-primary hover:text-primary-foreground"
-                          size="sm"
-                        >
-                          Instagram
-                        </Button>
-                        <Button 
-                          onClick={() => window.open('https://calendly.com/miquelcabanellascapo2006/30min', '_blank')}
-                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                          size="sm"
-                        >
-                          Agendar llamada
-                        </Button>
-                      </div>
-                    )}
-                  </div>
+...
                 </div>)}
+              {/* Elemento invisible para hacer scroll automático */}
+              <div ref={messagesEndRef} />
             </div>
           </ScrollArea>
 
